@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-TemelAracKullanimlari", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-Arac_Kullanimlari", "01-TemelAracKullanimlari\01-Arac_Kullanimlari\01-Arac_Kullanimlari.csproj", "{188179B3-7FC2-43A7-92D2-52FC88653935}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-Ucus_Rezervasyon_Sistemi", "01-TemelAracKullanimlari\02-Ucus_Rezervasyon_Sistemi\02-Ucus_Rezervasyon_Sistemi.csproj", "{FE138E7B-7A6A-4C6C-9843-F7549A0260C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{188179B3-7FC2-43A7-92D2-52FC88653935}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{188179B3-7FC2-43A7-92D2-52FC88653935}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{188179B3-7FC2-43A7-92D2-52FC88653935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE138E7B-7A6A-4C6C-9843-F7549A0260C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE138E7B-7A6A-4C6C-9843-F7549A0260C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE138E7B-7A6A-4C6C-9843-F7549A0260C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE138E7B-7A6A-4C6C-9843-F7549A0260C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{188179B3-7FC2-43A7-92D2-52FC88653935} = {F6CD9328-7DC1-4AC3-948E-7E65D035AFDD}
+		{FE138E7B-7A6A-4C6C-9843-F7549A0260C4} = {F6CD9328-7DC1-4AC3-948E-7E65D035AFDD}
 	EndGlobalSection
 EndGlobal
