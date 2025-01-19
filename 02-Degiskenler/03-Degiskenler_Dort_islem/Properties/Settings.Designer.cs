@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _03_Degiskenler_4_islem.Properties
+namespace _03_Degiskenler_Dort_islem.Properties
 {
 
 

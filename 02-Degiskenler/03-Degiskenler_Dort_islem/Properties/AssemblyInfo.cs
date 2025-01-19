@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("03-Degiskenler_4_islem")]
+[assembly: AssemblyTitle("03-Degiskenler_Dort_islem")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP")]
-[assembly: AssemblyProduct("03-Degiskenler_4_islem")]
+[assembly: AssemblyProduct("03-Degiskenler_Dort_islem")]
 [assembly: AssemblyCopyright("Copyright © HP 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0f215f8f-ed6a-4c92-b058-a0aaf52294f2")]
+[assembly: Guid("baa8f674-d49e-47ad-8bff-101fdd4b575e")]
 
 // Version information for an assembly consists of the following four values:
 //

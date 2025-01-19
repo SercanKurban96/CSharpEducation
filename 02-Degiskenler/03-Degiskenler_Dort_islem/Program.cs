@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _03_Degiskenler_4_islem
+namespace _03_Degiskenler_Dort_islem
 {
     internal static class Program
     {

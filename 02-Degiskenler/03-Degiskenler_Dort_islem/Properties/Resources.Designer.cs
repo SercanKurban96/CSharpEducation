@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _03_Degiskenler_4_islem.Properties
+namespace _03_Degiskenler_Dort_islem.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace _03_Degiskenler_4_islem.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("_03_Degiskenler_4_islem.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("_03_Degiskenler_Dort_islem.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
