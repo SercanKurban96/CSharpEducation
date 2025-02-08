@@ -111,6 +111,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-Metin_Belgesi_Okuma", "1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-Metin_Belgesi_Kayit", "11-DosyaIslemleri\04-Metin_Belgesi_Kayit\04-Metin_Belgesi_Kayit.csproj", "{7EB7ACDC-66B3-4300-B6D6-303AE39F0870}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-HastaneYonetim&RandevuSistemi", "12-HastaneYonetim&RandevuSistemi", "{B5895C79-90DC-4F23-B8F5-C9EC95A95ECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proje_Hastane", "12-HastaneYonetim&RandevuSistemi\Proje_Hastane\Proje_Hastane.csproj", "{C043E37D-20EB-4996-9405-F310623C7633}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -289,6 +293,10 @@ Global
 		{7EB7ACDC-66B3-4300-B6D6-303AE39F0870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EB7ACDC-66B3-4300-B6D6-303AE39F0870}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EB7ACDC-66B3-4300-B6D6-303AE39F0870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C043E37D-20EB-4996-9405-F310623C7633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C043E37D-20EB-4996-9405-F310623C7633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C043E37D-20EB-4996-9405-F310623C7633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C043E37D-20EB-4996-9405-F310623C7633}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -337,5 +345,6 @@ Global
 		{194CC676-B8C5-491E-A3B4-27E4C8A3A527} = {F9D1E659-D80E-4774-A9E4-6514441F0C49}
 		{3CD4C709-C52D-4B61-B4A1-5D5E2C6F618B} = {F9D1E659-D80E-4774-A9E4-6514441F0C49}
 		{7EB7ACDC-66B3-4300-B6D6-303AE39F0870} = {F9D1E659-D80E-4774-A9E4-6514441F0C49}
+		{C043E37D-20EB-4996-9405-F310623C7633} = {B5895C79-90DC-4F23-B8F5-C9EC95A95ECC}
 	EndGlobalSection
 EndGlobal
