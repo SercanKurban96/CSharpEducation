@@ -97,6 +97,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-Matematik_Fonksiyonlari"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-Dinamik_Araclar", "09-EkstraYapilar\07-Dinamik_Araclar\07-Dinamik_Araclar.csproj", "{E088BA41-4B48-4148-9F29-0234B82059B6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10-VeriTabaniSQL", "10-VeriTabaniSQL", "{658E5DCD-46D2-491C-A0DA-D8A95B01FA2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-Personel_Kayit", "10-VeriTabaniSQL\01-Personel_Kayit\01-Personel_Kayit.csproj", "{63106F7F-EE21-47F1-AD55-D657539AE117}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -255,6 +259,10 @@ Global
 		{E088BA41-4B48-4148-9F29-0234B82059B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E088BA41-4B48-4148-9F29-0234B82059B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E088BA41-4B48-4148-9F29-0234B82059B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63106F7F-EE21-47F1-AD55-D657539AE117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63106F7F-EE21-47F1-AD55-D657539AE117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63106F7F-EE21-47F1-AD55-D657539AE117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63106F7F-EE21-47F1-AD55-D657539AE117}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -298,5 +306,6 @@ Global
 		{6B258162-66B0-4D0F-BF41-77444E30E7B9} = {679697AE-502D-4BE1-9FE8-656437152B6A}
 		{4467F386-98D2-4CD3-B361-EC29F965D6F6} = {679697AE-502D-4BE1-9FE8-656437152B6A}
 		{E088BA41-4B48-4148-9F29-0234B82059B6} = {679697AE-502D-4BE1-9FE8-656437152B6A}
+		{63106F7F-EE21-47F1-AD55-D657539AE117} = {658E5DCD-46D2-491C-A0DA-D8A95B01FA2D}
 	EndGlobalSection
 EndGlobal
