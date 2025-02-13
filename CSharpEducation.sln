@@ -127,6 +127,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-Exception_Ornekleri", "1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-Finally", "14-HataKontrolleri\03-Finally\03-Finally.csproj", "{CC541409-2C26-4D92-9EED-02E7A85B212C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15-OrnekProje-IliskiliTablolarveEOkulBenzeriUygulama", "15-OrnekProje-IliskiliTablolarveEOkulBenzeriUygulama", "{AE7082CA-6807-48D4-9892-6CC4439B25E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OkulProje", "15-OrnekProje-IliskiliTablolarveEOkulBenzeriUygulama\OkulProje\OkulProje.csproj", "{14CF0248-3C52-4DA7-B339-8A1E3CAB0393}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -325,6 +329,10 @@ Global
 		{CC541409-2C26-4D92-9EED-02E7A85B212C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC541409-2C26-4D92-9EED-02E7A85B212C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC541409-2C26-4D92-9EED-02E7A85B212C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14CF0248-3C52-4DA7-B339-8A1E3CAB0393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14CF0248-3C52-4DA7-B339-8A1E3CAB0393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14CF0248-3C52-4DA7-B339-8A1E3CAB0393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14CF0248-3C52-4DA7-B339-8A1E3CAB0393}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -378,5 +386,6 @@ Global
 		{E61D8175-EB1E-4307-A08E-6EBC2DC1A06E} = {AA1FB096-A00C-4F8F-93C5-CDC457A5A480}
 		{D18D5274-399B-4711-B27B-BB321ABE2FA6} = {AA1FB096-A00C-4F8F-93C5-CDC457A5A480}
 		{CC541409-2C26-4D92-9EED-02E7A85B212C} = {AA1FB096-A00C-4F8F-93C5-CDC457A5A480}
+		{14CF0248-3C52-4DA7-B339-8A1E3CAB0393} = {AE7082CA-6807-48D4-9892-6CC4439B25E5}
 	EndGlobalSection
 EndGlobal
