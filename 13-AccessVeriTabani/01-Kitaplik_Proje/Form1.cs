@@ -19,8 +19,7 @@ namespace _01_Kitaplik_Proje
         {
             InitializeComponent();
         }
-        OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.JET.OLEDB.4.0;Data Source=C:\\Users\\beste\\OneDrive\\Masaüstü\\Kitaplik.mdb");
-
+        OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.JET.OLEDB.4.0;Data Source=Kitaplik.mdb");
         void listele()
         {
             DataTable dt = new DataTable();
