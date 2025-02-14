@@ -46,17 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGirisler.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmGirisler.Designer.cs">
+      <DependentUpon>FrmGirisler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDersler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDersler.Designer.cs">
+      <DependentUpon>FrmDersler.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmKulup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmKulup.Designer.cs">
       <DependentUpon>FrmKulup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOgrenci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOgrenci.Designer.cs">
+      <DependentUpon>FrmOgrenci.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOgrenciNotlar.cs">
       <SubType>Form</SubType>
@@ -70,19 +87,34 @@
     <Compile Include="FrmOgretmen.Designer.cs">
       <DependentUpon>FrmOgretmen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSinavNotlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSinavNotlar.Designer.cs">
+      <DependentUpon>FrmSinavNotlar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGirisler.resx">
+      <DependentUpon>FrmGirisler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDersler.resx">
+      <DependentUpon>FrmDersler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKulup.resx">
       <DependentUpon>FrmKulup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOgrenci.resx">
+      <DependentUpon>FrmOgrenci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOgrenciNotlar.resx">
       <DependentUpon>FrmOgrenciNotlar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOgretmen.resx">
       <DependentUpon>FrmOgretmen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSinavNotlar.resx">
+      <DependentUpon>FrmSinavNotlar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,6 +125,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,10 +151,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\116735_teacher_icon.png" />
+    <Content Include="images\118917_edit_clear_icon %281%29.png" />
+    <Content Include="images\143832_calculator_calc_calculate_math_icon.png" />
     <Content Include="images\1622833_checkmark_done_exam_list_pencil_icon.png" />
     <Content Include="images\2064490_education_formula_learn_school_student_icon.png" />
     <Content Include="images\2530802_cog_gear_general_machine_office_icon.png" />
     <Content Include="images\299068_add_sign_icon %281%29.png" />
+    <Content Include="images\3069190_search_research_icon.png" />
     <Content Include="images\3099382_man_student_icon.png" />
     <Content Include="images\379413_student_icon.png" />
     <Content Include="images\4212916_education_note_notes_student_icon.png" />

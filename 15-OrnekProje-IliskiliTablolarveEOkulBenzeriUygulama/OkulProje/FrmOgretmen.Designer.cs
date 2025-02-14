@@ -60,6 +60,7 @@
             this.btnDersIslemleri.TabIndex = 0;
             this.btnDersIslemleri.Text = "DERS İŞLEMLERİ";
             this.btnDersIslemleri.UseVisualStyleBackColor = false;
+            this.btnDersIslemleri.Click += new System.EventHandler(this.btnDersIslemleri_Click);
             // 
             // pictureBox1
             // 
@@ -115,6 +116,7 @@
             this.btnSinavNotlari.TabIndex = 4;
             this.btnSinavNotlari.Text = "SINAV NOTLARI";
             this.btnSinavNotlari.UseVisualStyleBackColor = false;
+            this.btnSinavNotlari.Click += new System.EventHandler(this.btnSinavNotlari_Click);
             // 
             // pictureBox4
             // 
@@ -159,6 +161,7 @@
             this.btnOgrenciIslemleri.TabIndex = 8;
             this.btnOgrenciIslemleri.Text = "ÖĞRENCİ İŞLEMLERİ";
             this.btnOgrenciIslemleri.UseVisualStyleBackColor = false;
+            this.btnOgrenciIslemleri.Click += new System.EventHandler(this.btnOgrenciIslemleri_Click);
             // 
             // pctCikis
             // 
@@ -178,7 +181,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(18, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(403, 39);
+            this.label1.Size = new System.Drawing.Size(386, 38);
             this.label1.TabIndex = 11;
             this.label1.Text = "ÖĞRETMEN İŞLEMLERİ";
             // 
@@ -203,7 +206,7 @@
             this.Controls.Add(this.btnDersIslemleri);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmOgretmen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Öğretmen İşlemleri";

@@ -28,5 +28,26 @@ namespace OkulProje
             fr.Show();
             this.Hide();
         }
+
+        private void btnDersIslemleri_Click(object sender, EventArgs e)
+        {
+            FrmDersler fr = new FrmDersler();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void btnOgrenciIslemleri_Click(object sender, EventArgs e)
+        {
+            FrmOgrenci fr = new FrmOgrenci();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void btnSinavNotlari_Click(object sender, EventArgs e)
+        {
+            FrmSinavNotlar fr = new FrmSinavNotlar();
+            fr.Show();
+            this.Hide();
+        }
     }
 }
