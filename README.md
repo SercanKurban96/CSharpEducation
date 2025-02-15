@@ -1556,7 +1556,7 @@ private void dgvDersler_CellClick(object sender, DataGridViewCellEventArgs e)<br
 
 <hr>
 
-# 🖥️ Bölüm 16 - Entity Framework
+# 🖥️ Bölüm 16 - Entity Framework + LINQ Sorgular
 Entity Framework (EF), C# ile veritabanı işlemlerini kolaylaştıran bir ORM (Object-Relational Mapping) kütüphanesidir. Yani, SQL komutları yazmadan veritabanı ile çalışmamızı sağlar.<br><br>
 
 ✔ SQL sorgularını otomatik oluşturur.<br>
@@ -1637,6 +1637,17 @@ private void dgvKategori_CellClick(object sender, DataGridViewCellEventArgs e)<b
     }       <br>
 }<br>
 <br>
+
+## 📌 C# LINQ (Language Integrated Query) Nedir?
+LINQ (Language Integrated Query), C# ve .NET içinde veri sorgulamak için kullanılan güçlü bir yapıdır.<br><br>
+
+✔ SQL benzeri sorgular yazmamızı sağlar.<br>
+✔ Listeler, Diziler, Veri Tabanı (EF), XML ve JSON gibi farklı veri kaynaklarıyla çalışabiliriz.<br>
+✔ Daha okunabilir ve performanslı kod yazmamızı sağlar.<br><br>
+
+![image](https://github.com/user-attachments/assets/6d06eaff-c7bc-45ad-9cdd-995d0e46dbe3)<br>
+
+LINQ sorguları için bir tane istatistik formu oluşturduk. Burada toplam kategoriyi sayısını, en pahalı ürünü vs. işlemleri yapılmaktadır.<br>
 
 <hr>
 
