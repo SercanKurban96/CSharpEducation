@@ -1111,3 +1111,130 @@ private void btnSil_Click(object sender, EventArgs e)<br>
     MessageBox.Show("Personel Silindi");<br>
     this.tbl_PersonelTableAdapter.Fill(this.personelVeriTabaniDataSet.Tbl_Personel);<br>
 }<br><br>
+
+# 🖥️ Bölüm 11 - Dosya İşlemleri
+C#'ta dosya işlemleri, System.IO kütüphanesi ile gerçekleştirilir. Bu kütüphane, dosya okuma, yazma, silme, taşıma gibi işlemleri yapmamızı sağlar.<br><br>
+## 📌 1. Gerekli Kütüphane
+Dosya işlemleri için System.IO kütüphanesini kullanmalıyız:<br><br>
+using System;<br>
+using System.IO;<br><br>
+
+## 📌 2. Dosya Oluşturma ve Yazma (File.WriteAllText, StreamWriter)
+Bir dosya oluşturup içine veri yazmak için File.WriteAllText() veya StreamWriter kullanılır.<br><br>
+### ✅ File.WriteAllText() ile Yazma
+string dosyaYolu = "C:\\Dosyalar\\ornek.txt";<br>
+File.WriteAllText(dosyaYolu, "Merhaba, bu bir dosya yazma testidir.");<br>
+Console.WriteLine("Dosya başarıyla oluşturuldu!");<br><br>
+📍 Dosya yoksa oluşturur, varsa üzerine yazar.<br><br>
+### ✅ StreamWriter ile Yazma
+using (StreamWriter sw = new StreamWriter("C:\\Dosyalar\\ornek.txt"))<br>
+{<br>
+    sw.WriteLine("Bu bir StreamWriter testidir.");<br>
+    sw.WriteLine("İkinci satır.");<br>
+}<br>
+Console.WriteLine("Dosya yazıldı!");<br><br>
+📍 using bloğu sayesinde dosya otomatik kapanır.<br><br>
+
+## 📌 3. Dosyadan Okuma (File.ReadAllText, StreamReader)
+Bir dosyanın içeriğini okumak için File.ReadAllText() veya StreamReader kullanılır.<br><br>
+### ✅ File.ReadAllText() ile Okuma
+string icerik = File.ReadAllText("C:\\Dosyalar\\ornek.txt");<br>
+Console.WriteLine("Dosya İçeriği:\n" + icerik);<br><br>
+📍 Dosyanın tamamını okur.<br><br>
+### ✅ StreamReader ile Satır Satır Okuma
+using (StreamReader sr = new StreamReader("C:\\Dosyalar\\ornek.txt"))<br>
+{<br>
+    string satir;<br>
+    while ((satir = sr.ReadLine()) != null)<br>
+    {<br>
+        Console.WriteLine(satir);<br>
+    }<br>
+}<br><br>
+📍 Dosyayı satır satır okur.<br><br>
+
+C#’ta OpenFileDialog, SaveFileDialog ve FolderBrowserDialog, kullanıcıya dosya veya klasör seçtirme işlemleri için kullanılan bileşenlerdir. Windows Forms uygulamalarında System.Windows.Forms kütüphanesi içinde bulunurlar.<br><br>
+## 📌 1. OpenFileDialog (Dosya Açma Penceresi)
+Kullanıcının bir dosya seçmesini sağlar. Seçilen dosyanın yolunu alarak programda kullanabiliriz.<br><br>
+### ✅ Kullanımı
+using System;<br>
+using System.Windows.Forms;<br>
+<br>
+class Program<br>
+{<br>
+    [STAThread] // OpenFileDialog için gerekli<br>
+    static void Main()<br>
+    {<br>
+        OpenFileDialog openFileDialog = new OpenFileDialog();<br>
+        openFileDialog.Title = "Dosya Seç";<br>
+        openFileDialog.Filter = "Metin Dosyaları|*.txt|Tüm Dosyalar|*.*";<br>
+        openFileDialog.InitialDirectory = "C:\\";<br>
+<br>
+        if (openFileDialog.ShowDialog() == DialogResult.OK)<br>
+        {<br>
+            string dosyaYolu = openFileDialog.FileName;<br>
+            MessageBox.Show("Seçilen Dosya: " + dosyaYolu);<br>
+        }<br>
+    }<br>
+}<br><br>
+
+✔ Filter = "Metin Dosyaları|*.txt|Tüm Dosyalar|*.*"; → Sadece belirli dosya türlerini gösterir.<br>
+✔ InitialDirectory = "C:\\"; → İlk açıldığında gösterilecek klasörü belirler.<br>
+✔ FileName → Seçilen dosyanın tam yolunu döndürür.<br><br>
+
+## 📌 2. SaveFileDialog (Dosya Kaydetme Penceresi)
+Kullanıcının bir dosya kaydetmesini sağlar. Kullanıcı dosya adını belirleyip Kaydet dediğinde, program bu yolu alır ve içine veri yazabilir.<br><br>
+
+### ✅ Kullanımı
+using System;<br>
+using System.IO;<br>
+using System.Windows.Forms;<br>
+<br>
+class Program<br>
+{<br>
+    [STAThread]<br>
+    static void Main()<br>
+    {<br>
+        SaveFileDialog saveFileDialog = new SaveFileDialog();<br>
+        saveFileDialog.Title = "Dosya Kaydet";<br>
+        saveFileDialog.Filter = "Metin Dosyaları|*.txt|Tüm Dosyalar|*.*";<br>
+        saveFileDialog.DefaultExt = "txt";<br>
+        saveFileDialog.FileName = "yeni_dosya.txt";<br>
+<br>
+        if (saveFileDialog.ShowDialog() == DialogResult.OK)<br>
+        {<br>
+            string dosyaYolu = saveFileDialog.FileName;<br>
+            File.WriteAllText(dosyaYolu, "Bu dosya C# ile kaydedildi.");<br>
+            MessageBox.Show("Dosya başarıyla kaydedildi!");<br>
+        }<br>
+    }<br>
+}<br><br>
+
+✔ Kullanıcı, kaydetme penceresinden bir dosya adı belirler.<br>
+✔ File.WriteAllText(dosyaYolu, "İçerik"); → Seçilen yola yazma işlemi yapar.<br>
+✔ DefaultExt = "txt"; → Varsayılan dosya uzantısını belirler.<br>
+✔ FileName = "yeni_dosya.txt"; → Varsayılan dosya adını belirler.<br>
+
+## 📌 3. FolderBrowserDialog (Klasör Seçme Penceresi)
+Kullanıcının bir klasör seçmesini sağlar.<br><br>
+### ✅ Kullanımı
+using System;<br>
+using System.Windows.Forms;<br>
+<br>
+class Program<br>
+{<br>
+    [STAThread]<br>
+    static void Main()<br>
+    {<br>
+        FolderBrowserDialog folderDialog = new FolderBrowserDialog();<br>
+        folderDialog.Description = "Bir klasör seçin:";<br>
+        folderDialog.ShowNewFolderButton = true; // Yeni klasör oluşturma butonu göster<br>
+<br>
+        if (folderDialog.ShowDialog() == DialogResult.OK)<br>
+        {<br>
+            string klasorYolu = folderDialog.SelectedPath;<br>
+            MessageBox.Show("Seçilen Klasör: " + klasorYolu);<br>
+        }<br>
+    }<br>
+}<br><br>
+✔ ShowNewFolderButton = true; → Kullanıcının yeni klasör oluşturmasına izin verir.<br>
+✔ SelectedPath → Seçilen klasörün tam yolunu döndürür.<br><br>
