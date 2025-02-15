@@ -1474,3 +1474,90 @@ catch (Exception ex)<br>
 
 <hr>
 
+# 🖥️ Bölüm 15 - Örnek Proje: İlişkili Tablolar ile E-Okul Benzeri Uygulama + Dataset ile Crud İşlemleri
+Bu bölümde bir bonus projesi yapıldı.<br><br>
+📍 Bu projede öğrenci ve öğretmen giriş panelleri bulunmaktadır.<br>
+📍 Burada öğrenci numarasını girdiğinde kendi notlarını görüntüleyebilir.<br>
+📍 Öğretmen numarasını direkt 0000 olarak belirledik. Öğretmen panelinde 5 tane işlem bulunmaktadır.<br>
+📍 Kulüp kısmında ADO.NET ile CRUD işlemleri yapılmıştır.<br>
+📍 Diğer tüm işlemlerde ise Dataset ile CRUD işlemleri yapılmıştır.<br><br>
+
+Dataset oluşturmak için katmanımıza sağ tıklayarak Add kısmından New Item seçilir.<br>
+![image](https://github.com/user-attachments/assets/910412d4-81e8-4aef-b974-5599516c64fc)<br>
+Sağ tarafta yer alan Data kısmından Dataset seçip Add diyoruz. Dataset eklediğimizde ilk başta boş bir pencere gözükecektir.<br>
+![image](https://github.com/user-attachments/assets/6e082f99-153d-4075-910b-d584006f1eee)<br>
+Boş alana sağ tıklayıp Add kısmından TableAdapter diyoruz.<br>
+Buradan veri tabanınımızı ekleyip Next diyoruz.<br>
+![image](https://github.com/user-attachments/assets/471d3461-a426-447e-9938-0f6570068578)<br>
+Karşımıza çıkan pencerede en üstteki Use SQL statements seçili gelecektir. Next diyoruz.<br>
+![image](https://github.com/user-attachments/assets/5993f6a8-5da3-4c13-9cce-a53950ffb906)<br>
+Bu ekranda bir sorgu oluşturmaya çalışacağız. Bunun için sağ altta yer alan Query Builder'a tıklıyoruz.<br>
+![image](https://github.com/user-attachments/assets/876d3a49-f569-4297-9764-393086405198)<br>
+Buradan yapmak istediğimiz CRUD işlemi hangisiyse ilgili tabloyu seçiyoruz. Örnek olarak Dersler tablosunu seçelim.<br>
+![image](https://github.com/user-attachments/assets/98e5d145-4617-42c8-a331-ca38d93cb421)<br>
+Buradaki bütün alanları seçtikten sonra otomatik olarak sorguyu oluşturacaktır. OK diyoruz.<br>
+![image](https://github.com/user-attachments/assets/28c6730b-0243-4089-8fd9-0e7a19961d35)<br>
+Sorguyu oluşturdu. Next diyoruz.<br>
+![image](https://github.com/user-attachments/assets/be436463-b8c7-4f5e-9d7b-e33396e2603d)<br>
+Burada Method name kısmında Default olarak GetData isminde çıkacaktır. Burayı değiştirip ismini DersListesi olarak belirliyoruz ve Next diyoruz.<br>
+![image](https://github.com/user-attachments/assets/a551adfd-2a12-4be4-a1da-bb0e5d101c3d)<br>
+Burada eğer sorguda herhangi bir hata yapmadıysak karşımıza bu şekilde hepsi ✔ işaretiyle çıkacaktır. Finish diyoruz.<br><br>
+
+Dersler formuna giderek temel CRUD işlemlerini yapalım.<br>
+
+Global alana yazacağımız kod;<br><br>
+DataSet1TableAdapters.TBLDERSLERTableAdapter ds = new DataSet1TableAdapters.TBLDERSLERTableAdapter();
+
+CRUD İşlemleri için kodlar;<br><br>
+private void btnListele_Click(object sender, EventArgs e)<br>
+{<br>
+    dgvDersler.DataSource = ds.DersListesi();<br>
+}<br>
+<br>
+private void btnEkle_Click(object sender, EventArgs e)<br>
+{<br>
+    ds.DersEkle(txtDersAdi.Text);<br>
+    MessageBox.Show("Ders Ekleme İşlemi Yapılmıştır");<br>
+    txtDersAdi.Clear();<br>
+    dgvDersler.DataSource = ds.DersListesi();<br>
+}<br>
+<br>
+private void btnSil_Click(object sender, EventArgs e)<br>
+{<br>
+    ds.DersSil(byte.Parse(txtDersID.Text));<br>
+    MessageBox.Show("Ders Silme İşlemi Yapılmıştır");<br>
+    txtDersID.Clear();<br>
+    txtDersAdi.Clear();<br>
+    dgvDersler.DataSource = ds.DersListesi();<br>
+}<br>
+<br>
+private void btnGuncelle_Click(object sender, EventArgs e)<br>
+{<br>
+    ds.DersGuncelle(txtDersAdi.Text, byte.Parse(txtDersID.Text));<br>
+    MessageBox.Show("Ders Güncelleme İşlemi Yapılmıştır");<br>
+    txtDersID.Clear();<br>
+    txtDersAdi.Clear();<br>
+    dgvDersler.DataSource = ds.DersListesi();<br>
+}<br>
+<br>
+private void dgvDersler_CellClick(object sender, DataGridViewCellEventArgs e)<br>
+{<br>
+    try<br>
+    {<br>
+        txtDersID.Text = dgvDersler.Rows[e.RowIndex].Cells[0].Value.ToString();<br>
+        txtDersAdi.Text = dgvDersler.Rows[e.RowIndex].Cells[1].Value.ToString();<br>
+    }<br>
+    catch (Exception)<br>
+    {<br>
+<br>
+    }<br>
+}<br>
+<br>
+
+<hr>
+
+# 🖥️ Bölüm 16 - Entity Framework
+
+
+
+
