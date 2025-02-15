@@ -482,3 +482,238 @@ static void Main()<br>
     Console.WriteLine(h.Carp(3, 4));        // Çıktı: 12<br>
 }<br>
 <br>
+
+# 🖥️ Bölüm 7 - Sınıflar
+C#’ta sınıflar (classes), nesne tabanlı programlamanın (OOP - Object Oriented Programming) temel yapı taşıdır. Veri (değişkenler) ve işlevleri (metotlar) bir araya getiren bir yapıdır.<br><br>
+
+## 📌 1. Sınıf Tanımlama ve Nesne Kullanımı
+Bir sınıf tanımlamak için class anahtar kelimesi kullanılır.<br><br>
+### ⚙️ Temel Sınıf Tanımlama
+class Araba<br>
+{<br>
+    public string marka;<br>
+    public int yil;<br>
+    <br>
+    public void BilgiGoster()<br>
+    {<br>
+        Console.WriteLine("Marka: " + marka + ", Yıl: " + yil);<br>
+    }<br>
+}<br>
+<br>
+
+📌 Sınıfın içinde:<br>
+✅ <b>Değişkenler (Fields):</b> marka, yil gibi özellikler saklanır.<br>
+✅ <b>Metotlar (Methods):</b> BilgiGoster() gibi işlemler yapılır.<br><br>
+
+## 📌 2. Nesne (Object) Oluşturma
+Bir sınıfı kullanabilmek için <strong>ondan bir nesne türetmemiz gerekir.</strong><br><br>
+
+class Program<br>
+{<br>
+    static void Main()<br>
+    {<br>
+        // Araba sınıfından bir nesne oluştur<br>
+        Araba benimArabam = new Araba();<br>
+        <br>
+        // Özellikleri ata<br>
+        benimArabam.marka = "Toyota";<br>
+        benimArabam.yil = 2022;<br>
+<br>
+        // Metodu çağır<br>
+        benimArabam.BilgiGoster();<br>
+    }<br>
+}<br>
+<br>
+✅ Çıktı:<br>
+Marka: Toyota, Yıl: 2022<br>
+💯 Not: benimArabam nesnesi Araba sınıfının bir örneğidir (instance).<br><br>
+
+## 📌 3. Yapıcı Metotlar (Constructors)
+
+Yapıcı metotlar (constructor), sınıf çağrıldığında otomatik olarak çalışır.<br>
+❗ <strong>Metodun adı, sınıf adıyla aynı olmalıdır.</strong><br><br>
+### ⚙️ Yapıcı Metot Kullanımı
+
+class Araba<br>
+{<br>
+    public string marka;<br>
+    public int yil;<br>
+<br>
+    // Yapıcı Metot (Constructor)<br>
+    public Araba(string _marka, int _yil)<br>
+    {<br>
+        marka = _marka;<br>
+        yil = _yil;<br>
+    }<br>
+<br>
+    public void BilgiGoster()<br>
+    {<br>
+        Console.WriteLine("Marka: " + marka + ", Yıl: " + yil);<br>
+    }<br>
+}<br>
+<br>
+class Program<br>
+{<br>
+    static void Main()<br>
+    {<br>
+        Araba araba1 = new Araba("BMW", 2021);<br>
+        araba1.BilgiGoster();  // Çıktı: Marka: BMW, Yıl: 2021<br>
+    }<br>
+}<br>
+<br>
+✅ Avantajı: Nesne oluştururken değerleri doğrudan atayabiliriz.<br><br>
+
+## 📌 4. Kapsülleme (Encapsulation)
+💯 Değişkenleri private yaparak doğrudan erişimi engelleyebiliriz.<br>
+Erişimi kontrol etmek için public get/set metotları (property'ler) kullanılır.<br><br>
+
+class Kisi<br>
+{<br>
+    private string isim;<br>
+<br>
+    // İsmi ayarlayan metot<br>
+    public void SetIsim(string yeniIsim)<br>
+    {<br>
+        isim = yeniIsim;<br>
+    }<br>
+<br>
+    // İsmi döndüren metot<br>
+    public string GetIsim()<br>
+    {<br>
+        return isim;<br>
+    }<br>
+}<br>
+<br>
+class Program<br>
+{<br>
+    static void Main()<br>
+    {<br>
+        Kisi kisi = new Kisi();<br>
+        kisi.SetIsim("Ahmet");<br>
+        Console.WriteLine(kisi.GetIsim());  // Çıktı: Ahmet<br>
+    }<br>
+}<br>
+<br>
+
+📍 Amaç: Değişkenlere doğrudan erişimi sınırlandırmak ve güvenliği sağlamak.<br><br>
+
+## 📌 5. Özellikler (Properties) Kullanımı
+C#’ta get ve set ile kapsülleme daha kolay yapılabilir.<br><br>
+### ⚙️ Property Kullanımı
+class Araba<br>
+{<br>
+    private string _marka;<br>
+<br>
+    public string Marka<br>
+    {<br>
+        get { return _marka; }    // Değeri döndür<br>
+        set { _marka = value; }   // Değer ata<br>
+    }<br>
+}<br>
+<br>
+class Program<br>
+{<br>
+    static void Main()<br>
+    {<br>
+        Araba araba = new Araba();<br>
+        araba.Marka = "Mercedes";  // set çalışır<br>
+        Console.WriteLine(araba.Marka);  // get çalışır, Çıktı: Mercedes<br>
+    }<br>
+}<br>
+<br>
+
+📍 value, set içinde gönderilen değeri temsil eder.
+
+## 📌 6. Kalıtım (Inheritance) - Miras Alma
+Bir sınıf, başka bir sınıftan özellikleri ve metotları miras alabilir.<br><br>
+
+### ⚙️ : (extends) Kullanımı
+class Hayvan<br>
+{<br>
+    public void SesCikar()<br>
+    {<br>
+        Console.WriteLine("Hayvan sesi çıkarıyor...");<br>
+    }<br>
+}<br>
+<br>
+// `Kedi` sınıfı `Hayvan` sınıfından türetilmiştir.<br>
+class Kedi : Hayvan<br>
+{<br>
+    public void Miyavla()<br>
+    {<br>
+        Console.WriteLine("Miyav Miyav!");<br>
+    }<br>
+}<br>
+<br>
+class Program<br>
+{<br>
+    static void Main()<br>
+    {<br>
+        Kedi kedi = new Kedi();<br>
+        kedi.SesCikar();  // Miras alınan metot<br>
+        kedi.Miyavla();    // Kendi metodu<br>
+    }<br>
+}<br>
+<br>
+✅ Çıktı:<br>
+Hayvan sesi çıkarıyor...<br>
+Miyav Miyav!<br>
+<br>
+💯 Not: Kedi sınıfı, Hayvan sınıfının tüm özelliklerini alır ve kendine özgü eklemeler yapabilir.<br><br>
+
+## 📌 7. Soyut Sınıflar (abstract)
+Bazı sınıflar tamamlanmamış (soyut) olabilir. Bunlar abstract ile tanımlanır.<br><br>
+abstract class Sekil<br>
+{<br>
+    public abstract void Ciz(); // Soyut metot (gövdesiz)<br>
+}<br>
+<br>
+class Daire : Sekil<br>
+{<br>
+    public override void Ciz()<br>
+    {<br>
+        Console.WriteLine("Daire çizildi.");<br>
+    }<br>
+}<br>
+<br>
+class Program<br>
+{<br>
+    static void Main()<br>
+    {<br>
+        Daire daire = new Daire();<br>
+        daire.Ciz();  // Çıktı: Daire çizildi.<br>
+    }<br>
+}<br>
+<br>
+💯 Not:<br>
+✅ Soyut sınıflardan doğrudan nesne oluşturulamaz.<br>
+✅ Alt sınıflar, override ile eksik metotları tamamlamak zorundadır.<br><br>
+
+## 📌 8. Arayüzler (interface)
+Arayüzler, sınıfların uyması gereken kuralları belirler.<br><br>
+interface IArac<br>
+{<br>
+    void HareketEt();<br>
+}<br>
+<br>
+class Araba : IArac<br>
+{<br>
+    public void HareketEt()<br>
+    {<br>
+        Console.WriteLine("Araba gidiyor...");<br>
+    }<br>
+}<br>
+<br>
+class Program<br>
+{<br>
+    static void Main()<br>
+    {<br>
+        Araba araba = new Araba();<br>
+        araba.HareketEt();  // Çıktı: Araba gidiyor...<br>
+    }<br>
+}<br>
+<br>
+💯 Not:<br>
+✅ Arayüzler sadece metot imzaları içerir.<br>
+✅ Sınıflar, interface içindeki metotları uygulamak zorundadır.<br><br>
+
