@@ -1267,12 +1267,92 @@ Projeye ait ekran görüntüleri;<br><br>
 ![image](https://github.com/user-attachments/assets/a26421f8-1ebb-4ba3-9523-a0e0f77465f1)<br><br>
 ![image](https://github.com/user-attachments/assets/f4cf7188-9f79-4b55-91c3-7943dfbfd5d0)<br><br>
 
+# 🖥️ Bölüm 13 - Access Veri Tabanı
+C# ile Microsoft Access veritabanı bağlantısı kurarak CRUD (Create, Read, Update, Delete) işlemleri yapabiliriz. Access veritabanına bağlanmak için System.Data.OleDb kütüphanesini kullanırız.<br><br>
+## 📌 1. Gerekli Kütüphaneler
+C# uygulamanda Access veritabanına bağlanmak için aşağıdaki kütüphaneyi eklemeliyiz:<br>
+using System.Data.OleDb;<br><br>
 
+C# üzerinden Access veri tabanına bağlanmak için aynı şekilde Project kısmından Add New Data Source diyerek aynı adımları yapıyoruz;<br><br>
+![image](https://github.com/user-attachments/assets/b4fd8755-68ac-4f63-8b6a-936e2b6889aa)
+Burada en üstte yer alan Data Source kısmı Microsoft SQL Server olarak çıkacaktır. Access seçmek için sağda bulunan Change butonuna tıklıyoruz.<br>
+![image](https://github.com/user-attachments/assets/86f8f597-231a-4009-b209-0a3d1f774f82)<br>
+Burada en üstte yer alan Microsoft Access Database File seçiyoruz.<br>
+![image](https://github.com/user-attachments/assets/dd22e9a9-f911-45bd-a803-35d8fa66bf0e)<br>
+Buradan Database file name kısmından veri tabanı seçmek için Browse diyoruz ve ilgili veri tabanımızı seçiyoruz.<br><br>
 
+## 📌 2. Access Veritabanına Bağlantı (OleDbConnection)
+Access dosyanın konumuna göre bağlantı dizesi (Connection String) belirlemeliyiz.<br>
+‼️ <strong>.accdb (Access 2007 ve sonrası) ve .mdb (Access 2003 ve öncesi) uzantıları için bağlantı şekli farklıdır.</strong><br><br>
 
+### ✅ Access 2007+ (.accdb) için bağlantı
+string baglantiYolu = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Veritabanim.accdb;";<br>
+OleDbConnection baglanti = new OleDbConnection(baglantiYolu);<br><br>
+<hr>
 
+## ✅ Access 2003 (.mdb) için bağlantı
+string baglantiYolu = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Veritabanim.mdb;";<br>
+OleDbConnection baglanti = new OleDbConnection(baglantiYolu);<br><br>
 
+## 📌 3. Access Veritabanına Bağlanma
+try<br>
+{<br>
+    baglanti.Open();<br>
+    MessageBox.Show("Veritabanı bağlantısı başarılı!");<br>
+    baglanti.Close();<br>
+}<br>
+catch (Exception ex)<br>
+{<br>
+    MessageBox.Show("Bağlantı hatası: " + ex.Message);<br>
+}<br><br>
 
+## 📌 4. CRUD İşlemleri (Ekleme, Okuma, Güncelleme, Silme)
+CRUD işlemleri SQL ile aynıdır, ancak SQL'de SqlCommand kullanırken Access'te OleDbCommand kullanırız.<br><br>
+## ✅ a) Veri Ekleme (INSERT INTO)
+string ekleSorgu = "INSERT INTO Kullanici (Ad, Soyad, Yas) VALUES (@Ad, @Soyad, @Yas)";<br>
+OleDbCommand komut = new OleDbCommand(ekleSorgu, baglanti);<br>
+<br>
+komut.Parameters.AddWithValue("@Ad", "Ali");<br>
+komut.Parameters.AddWithValue("@Soyad", "Yılmaz");<br>
+komut.Parameters.AddWithValue("@Yas", 25);<br>
+<br>
+baglanti.Open();<br>
+komut.ExecuteNonQuery();<br>
+baglanti.Close();<br>
+MessageBox.Show("Kayıt başarıyla eklendi!");<br><br>
 
+## ✅ b) Veri Okuma (SELECT)
+string secSorgu = "SELECT * FROM Kullanici";<br>
+OleDbCommand komut = new OleDbCommand(secSorgu, baglanti);<br>
+baglanti.Open();<br>
+<br>
+OleDbDataReader okuyucu = komut.ExecuteReader();<br>
+while (okuyucu.Read())<br>
+{<br>
+    Console.WriteLine($"ID: {okuyucu["ID"]}, Ad: {okuyucu["Ad"]}, Soyad: {okuyucu["Soyad"]}, Yaş: {okuyucu["Yas"]}");<br>
+}<br>
+<br>
+baglanti.Close();<br><br>
 
+## ✅ c) Veri Güncelleme (UPDATE)
+string guncelleSorgu = "UPDATE Kullanici SET Yas = @YeniYas WHERE ID = @ID";<br>
+OleDbCommand komut = new OleDbCommand(guncelleSorgu, baglanti);<br>
+<br>
+komut.Parameters.AddWithValue("@YeniYas", 30);<br>
+komut.Parameters.AddWithValue("@ID", 1);<br>
+<br>
+baglanti.Open();<br>
+komut.ExecuteNonQuery();<br>
+baglanti.Close();<br>
+MessageBox.Show("Kayıt güncellendi!");<br><br>
 
+## ✅ d) Veri Silme (DELETE)
+string silSorgu = "DELETE FROM Kullanici WHERE ID = @ID";<br>
+OleDbCommand komut = new OleDbCommand(silSorgu, baglanti);<br>
+<br>
+komut.Parameters.AddWithValue("@ID", 1);<br>
+<br>
+baglanti.Open();<br>
+komut.ExecuteNonQuery();<br>
+baglanti.Close();<br>
+MessageBox.Show("Kayıt silindi!");<br><br>
