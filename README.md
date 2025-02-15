@@ -3,7 +3,7 @@
 <br><hr>
 # 🖥️ Bölüm 1 - Temel Araç Kullanımları
 Görsel programlamada arayüz oluşturabilmek için ihtiyacımız olan bileşenlerdir. C# formda araçlar araç kutusu (toolbox) üzerinden eklenir.
-<br><br>
+<br>
 ### ⚙️ Button
 Olayları gerçekleştirmek için kullanılan tetikleme aracıdır. Bir lambayı açıp kapatmak için ihtiyacımız olan düğme aslında bir butondur.
 ### ⚙️ Label
