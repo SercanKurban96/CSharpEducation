@@ -128,3 +128,113 @@ int sayi = 15;<br>
 string sonuc = (sayi % 2 == 0) ? "Çift Sayı" : "Tek Sayı";<br>
 Console.WriteLine(sonuc);<br>
 ✅Eğer sayi çiftse "Çift Sayı" yazdırır, aksi halde "Tek Sayı" yazdırır.<br>br>
+
+# 🖥️ Bölüm 4 - Döngüler
+C#'ta döngüler, belirli bir kod bloğunun tekrarlı olarak çalışmasını sağlar. Döngüler, belirli bir koşul doğru olduğu sürece çalışmaya devam eder.<br>
+
+## 📌 1. for Döngüsü
+Belirli bir sayıda işlem yapmak için kullanılır. Sayaç tabanlıdır ve genellikle kaç kere döneceği önceden bilinir.<br>
+for (int i = 1; i <= 5; i++)<br>
+{<br>
+    Console.WriteLine("Merhaba! " + i);<br>
+}<br>
+
+### ⚙️ Çalışma Mantığı
+📍 int i = 1; → Döngü sayacı başlatılır.<br>
+📍 i <= 5; → Koşul sağlandıkça döngü devam eder.<br>
+📍 i++ → Döngü her çalıştığında i artırılır.<br>
+
+✅ Çıktı:<br>
+Merhaba! 1  <br>
+Merhaba! 2  <br>
+Merhaba! 3  <br>
+Merhaba! 4  <br>
+Merhaba! 5  <br>
+
+## 📌 2. while Döngüsü
+Koşul doğru (true) olduğu sürece döner.<br>
+### ⚙️ Kullanımı:
+int sayi = 1;<br>
+
+while (sayi <= 5)<br>
+{<br>
+    Console.WriteLine("Sayı: " + sayi);<br>
+    sayi++;<br>
+}<br>
+✅ Çıktı:<br>
+Sayı: 1  <br>
+Sayı: 2  <br>
+Sayı: 3  <br>
+Sayı: 4  <br>
+Sayı: 5  <br>
+
+💯 Not: Eğer döngü koşulu hiç sağlanmazsa while bloğu çalışmaz.
+
+## 📌 3. do-while Döngüsü
+do-while, şartı en son kontrol ettiği için en az bir kez çalışır.<br>
+### ⚙️ Kullanımı:
+int sayi = 1;
+<br>
+do<br>
+{<br>
+    Console.WriteLine("Sayı: " + sayi);<br>
+    sayi++;<br>
+}<br>
+while (sayi <= 5);<br>
+✅ Çıktı:<br>
+Sayı: 1  <br>
+Sayı: 2  <br>
+Sayı: 3  <br>
+Sayı: 4  <br>
+Sayı: 5  <br>
+❗ Farkı: Koşul en sonda kontrol edilir, bu yüzden döngü en az bir defa çalışır.
+
+## 📌 4. foreach Döngüsü
+Diziler (array) veya koleksiyonlar üzerinde elemanları tek tek almak için kullanılır.<br>
+### ⚙️ Kullanımı:
+string[] meyveler = { "Elma", "Armut", "Muz", "Çilek" };<br>
+<br>
+foreach (string meyve in meyveler)<br>
+{<br>
+    Console.WriteLine(meyve);<br>
+}<br>
+✅ Çıktı:<br>
+Elma  <br>
+Armut  <br>
+Muz  <br>
+Çilek  <br>
+💯 Not: foreach, elemanları değiştirmeye izin vermez, sadece okumak için kullanılır.<br>
+
+## 📌 5. break ve continue Kullanımı
+Bazı durumlarda döngüyü durdurmak (break) veya belirli bir adımı atlamak (continue) gerekebilir.<br>
+
+### ⚙️ break Kullanımı (Döngüyü Sonlandırır)
+for (int i = 1; i <= 10; i++)<br>
+{<br>
+    if (i == 5)<br>
+    {<br>
+        break; // 5 olduğunda döngüden çıkar<br>
+    }<br>
+    Console.WriteLine(i);<br>
+}<br>
+✅ Çıktı:<br>
+1  <br>
+2  <br>
+3  <br>
+4  <br>
+
+### ⚙️ continue Kullanımı (Atlama Yapar)
+for (int i = 1; i <= 5; i++)<br>
+{<br>
+    if (i == 3)<br>
+    {<br>
+        continue; // 3'ü atla, devam et<br>
+    }<br>
+    Console.WriteLine(i);<br>
+}<br>
+✅ Çıktı:<br>
+1  <br>
+2  <br>
+4  <br>
+5  <br>
+
