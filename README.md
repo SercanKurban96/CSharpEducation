@@ -18,6 +18,8 @@ Görsel programlamada arayüz oluşturabilmek için ihtiyacımız olan bileşenl
 <b>⚙️ Panel: </b>Koleksiyonları gruplandırmak için kullanılır. Çoklu seçimlerden panelin içinde yer alan RadioButton ile panelde bulunmayan RadioButton araçları aynı anda seçebilme özelliğini sağlar.<br><br>
 <b>⚙️ GroupBox: </b>Araçları gruplandırmak için kullanılan form aracıdır. Amaç özellikle birbiriyle ilişkili olan bileşenleri bir arada tutabilmektir.<br><br>
 
+<hr>
+
 # 🖥️ Bölüm 2 - Değişkenler
 C#'ta değişkenler, verileri saklamak için kullanılan isimlendirilmiş bellek alanlarıdır. Değişkenler belirli bir veri tipine sahiptir ve o veri tipine uygun değerler alabilirler.
 <br>
@@ -59,6 +61,8 @@ bool dogruMu = true;<br>
 var otomatikBelirlenen = 42;  // int olarak algılanır<br>
 
 ✅ C#’ta değişken isimleri harfle veya _ (alt çizgi) ile başlamalıdır, rakamla başlayamaz. Ayrıca, büyük-küçük harf duyarlıdır (sayi ile Sayi farklı değişkenlerdir).<br><br>
+
+<hr>
 
 # 🖥️ Bölüm 3 - Karar Yapıları
 C#'ta karar yapıları, programın belirli koşullara göre farklı yollar izlemesini sağlar. Genellikle koşul ifadeleri (if, switch gibi) ile gerçekleştirilir.<br><br>
@@ -128,6 +132,8 @@ int sayi = 15;<br>
 string sonuc = (sayi % 2 == 0) ? "Çift Sayı" : "Tek Sayı";<br>
 Console.WriteLine(sonuc);<br>
 ✅Eğer sayi çiftse "Çift Sayı" yazdırır, aksi halde "Tek Sayı" yazdırır.<br>br>
+
+<hr>
 
 # 🖥️ Bölüm 4 - Döngüler
 C#'ta döngüler, belirli bir kod bloğunun tekrarlı olarak çalışmasını sağlar. Döngüler, belirli bir koşul doğru olduğu sürece çalışmaya devam eder.<br>
@@ -240,6 +246,8 @@ for (int i = 1; i <= 5; i++)<br>
 4  <br>
 5  <br>
 
+<hr>
+
 # 🖥️ Bölüm 5 - Diziler
 C#'ta diziler (Arrays), aynı türdeki birden fazla veriyi tek bir değişkende saklamaya yarayan veri yapılarıdır.<br>
 
@@ -328,6 +336,8 @@ int index = Array.IndexOf(sayilar, 15);<br>
 <br>
 // Dizinin tüm elemanlarını temizleme (0'a çevirir)<br>
 Array.Clear(sayilar, 0, sayilar.Length);<br>
+
+<hr>
 
 # 🖥️ Bölüm 6 - Metotlar
 C#'ta metotlar, belirli bir görevi yerine getiren kod bloklarıdır. Metotlar sayesinde kod tekrarını önleyebilir, kodu daha düzenli ve okunabilir hale getirebiliriz.<br>
@@ -482,6 +492,8 @@ static void Main()<br>
     Console.WriteLine(h.Carp(3, 4));        // Çıktı: 12<br>
 }<br>
 <br>
+
+<hr>
 
 # 🖥️ Bölüm 7 - Sınıflar
 C#’ta sınıflar (classes), nesne tabanlı programlamanın (OOP - Object Oriented Programming) temel yapı taşıdır. Veri (değişkenler) ve işlevleri (metotlar) bir araya getiren bir yapıdır.<br><br>
@@ -717,6 +729,8 @@ class Program<br>
 ✅ Arayüzler sadece metot imzaları içerir.<br>
 ✅ Sınıflar, interface içindeki metotları uygulamak zorundadır.<br><br>
 
+<hr>
+
 # 🖥️ Bölüm 8 - Ekstra Araçlar
 Bu bölümde 4 tane araç kullanılmıştır. Bunlar MenuStrip, WebBrowser, Chart ve ContextMenuStrip araçlarıdır.<br><br>
 
@@ -775,6 +789,8 @@ Form'a eklediğimizde herhangi bir şey gözükmez ancak Form'un Properties kıs
 ![image](https://github.com/user-attachments/assets/0866a27b-0a78-4399-80bd-e74af2d0c31c)
 <br>
 Programı çalıştırdığımız zaman fareye sağ tıkladığımızda buradaki menüler gözükecektir.<br><br>
+
+<hr>
 
 # 🖥️ Bölüm 9 - Ekstra Yapılar
 Bu bölümde Random kullanımı, CAPTCHA oluşturma, formlar arası veri taşıma, Point, Enum, Matematik Fonksiyonları ve Dinamik Araçlar konuları içermektedir.<br><br>
@@ -856,6 +872,8 @@ btn.Size = new Size(100, 50);<br>
 btn.Location = new Point(50, 50);<br>
 btn.Click += (s, e) => MessageBox.Show("Butona tıklandı!");<br>
 this.Controls.Add(btn);<br><br>
+
+<hr>
 
 # 🖥️ Bölüm 10 - Veri Tabanı SQL
 
@@ -1112,6 +1130,8 @@ private void btnSil_Click(object sender, EventArgs e)<br>
     this.tbl_PersonelTableAdapter.Fill(this.personelVeriTabaniDataSet.Tbl_Personel);<br>
 }<br><br>
 
+<hr>
+
 # 🖥️ Bölüm 11 - Dosya İşlemleri
 C#'ta dosya işlemleri, System.IO kütüphanesi ile gerçekleştirilir. Bu kütüphane, dosya okuma, yazma, silme, taşıma gibi işlemleri yapmamızı sağlar.<br><br>
 ## 📌 1. Gerekli Kütüphane
@@ -1239,6 +1259,8 @@ class Program<br>
 ✔ ShowNewFolderButton = true; → Kullanıcının yeni klasör oluşturmasına izin verir.<br>
 ✔ SelectedPath → Seçilen klasörün tam yolunu döndürür.<br><br>
 
+<hr>
+
 # 🖥️ Bölüm 12 - Hastane Yönetim ve Randevu Sistemi Otomasyon Projesi
 Bu bölümde C# ve SQL ile bilgilerimizi pekiştirerek bir tane otomasyon hazırladık.<br><br>
 📍 Bu otomasyonda 3 tane kullanıcı girişi (hasta, doktor ve sekreter),<br> 
@@ -1266,6 +1288,8 @@ Projeye ait ekran görüntüleri;<br><br>
 ![image](https://github.com/user-attachments/assets/c9bc8d32-c41f-40ff-841d-b50b2b5a09e8)<br><br>
 ![image](https://github.com/user-attachments/assets/a26421f8-1ebb-4ba3-9523-a0e0f77465f1)<br><br>
 ![image](https://github.com/user-attachments/assets/f4cf7188-9f79-4b55-91c3-7943dfbfd5d0)<br><br>
+
+<hr>
 
 # 🖥️ Bölüm 13 - Access Veri Tabanı
 C# ile Microsoft Access veritabanı bağlantısı kurarak CRUD (Create, Read, Update, Delete) işlemleri yapabiliriz. Access veritabanına bağlanmak için System.Data.OleDb kütüphanesini kullanırız.<br><br>
@@ -1356,3 +1380,97 @@ baglanti.Open();<br>
 komut.ExecuteNonQuery();<br>
 baglanti.Close();<br>
 MessageBox.Show("Kayıt silindi!");<br><br>
+
+<hr>
+
+# 🖥️ Bölüm 14 - Hata Kontrolleri
+C#’ta hata kontrolleri (Exception Handling), programın çalışma sırasında beklenmeyen hataları yakalayıp yönetmek için kullanılır.<br>
+En yaygın hata kontrol yöntemi try-catch-finally bloğudur. Ayrıca throw, when, checked/unchecked, Debug.Assert gibi farklı hata yönetimi yöntemleri de vardır.<br><br>
+
+## 📌 1. Try-Catch-Finally Kullanımı
+Bir hata oluştuğunda programın çökmesini engelleyerek kontrolü ele alabiliriz.<br><br>
+### ✅ Temel Kullanım
+try<br>
+{<br>
+    int sayi1 = 10, sayi2 = 0;<br>
+    int sonuc = sayi1 / sayi2;  // Sıfıra bölme hatası oluşur<br>
+}<br>
+catch (Exception ex)<br>
+{<br>
+    Console.WriteLine("Hata oluştu: " + ex.Message);<br>
+}<br><br>
+✔ try → Hata olabilecek kod buraya yazılır.<br>
+✔ catch → Hata yakalandığında burası çalışır.<br>
+✔ ex.Message → Hatanın açıklamasını verir.<br><br>
+
+## 📌 2. Spesifik Hata Türlerini Yakalama
+Bazı hatalar daha spesifik olabilir, bu yüzden farklı türde catch blokları kullanabiliriz.<br><br>
+### ✅ Örnek
+try<br>
+{<br>
+    int[] dizi = { 1, 2, 3 };<br>
+    Console.WriteLine(dizi[5]); // Dizinin sınırlarını aşıyor<br>
+}<br>
+catch (IndexOutOfRangeException ex)<br>
+{<br>
+    Console.WriteLine("Dizinin sınırlarını aştınız!");<br>
+}<br>
+catch (DivideByZeroException ex)<br>
+{<br>
+    Console.WriteLine("Sıfıra bölme hatası!");<br>
+}<br>
+catch (Exception ex)<br>
+{<br>
+    Console.WriteLine("Bilinmeyen bir hata oluştu: " + ex.Message);<br>
+}<br><br>
+✔ IndexOutOfRangeException → Dizi sınırlarını aşma hatasını yakalar.<br>
+✔ DivideByZeroException → Sıfıra bölme hatasını yakalar.<br>
+✔ Genel Exception → Diğer hataları yakalar.<br><br>
+
+## 📌 3. Finally Bloğu (İsteğe Bağlı)
+finally bloğu, hata olsa da olmasa da her zaman çalıştırılır.<br>
+Özellikle veritabanı bağlantısı kapatma, dosya kapatma gibi işlemler için kullanılır.<br><br>
+### ✅ Örnek
+OleDbConnection baglanti = new OleDbConnection("Bağlantı_dizesi");<br>
+<br>
+try<br>
+{<br>
+    baglanti.Open();<br>
+    Console.WriteLine("Veritabanı bağlantısı açıldı.");<br>
+}<br>
+catch (Exception ex)<br>
+{<br>
+    Console.WriteLine("Hata oluştu: " + ex.Message);<br>
+}<br>
+finally<br>
+{<br>
+    baglanti.Close();  // Bağlantıyı kapat<br>
+    Console.WriteLine("Bağlantı kapatıldı.");<br>
+}<br><br>
+✔ Hata olsa da olmasa da finally bloğu her zaman çalışır.<br><br>
+
+## 📌 4. Hata Fırlatma (throw)
+Bazen kendi özel hatalarımızı oluşturmak isteyebiliriz.<br><br>
+### ✅ Kullanımı
+static void SifiraBolmeKontrol(int sayi)<br>
+{<br>
+    if (sayi == 0)<br>
+    {<br>
+        throw new DivideByZeroException("Sayı sıfır olamaz!");<br>
+    }<br>
+    Console.WriteLine("Sonuç: " + (10 / sayi));<br>
+}<br>
+<br>
+try<br>
+{<br>
+    SifiraBolmeKontrol(0);<br>
+}<br>
+catch (Exception ex)<br>
+{<br>
+    Console.WriteLine("Hata yakalandı: " + ex.Message);<br>
+}<br><br>
+✔ throw → Özel hata oluşturup fırlatır.<br>
+✔ catch bloğunda bu hata yakalanabilir.<br><br>
+
+<hr>
+
