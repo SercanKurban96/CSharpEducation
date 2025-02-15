@@ -168,7 +168,7 @@ Sayı: 3  <br>
 Sayı: 4  <br>
 Sayı: 5  <br>
 
-💯 Not: Eğer döngü koşulu hiç sağlanmazsa while bloğu çalışmaz.
+💯 Not: Eğer döngü koşulu hiç sağlanmazsa while bloğu çalışmaz.<br>
 
 ## 📌 3. do-while Döngüsü
 do-while, şartı en son kontrol ettiği için en az bir kez çalışır.<br>
@@ -187,7 +187,8 @@ Sayı: 2  <br>
 Sayı: 3  <br>
 Sayı: 4  <br>
 Sayı: 5  <br>
-❗ Farkı: Koşul en sonda kontrol edilir, bu yüzden döngü en az bir defa çalışır.
+
+❗ Farkı: Koşul en sonda kontrol edilir, bu yüzden döngü en az bir defa çalışır.<br>
 
 ## 📌 4. foreach Döngüsü
 Diziler (array) veya koleksiyonlar üzerinde elemanları tek tek almak için kullanılır.<br>
@@ -203,6 +204,7 @@ Elma  <br>
 Armut  <br>
 Muz  <br>
 Çilek  <br>
+<br>
 💯 Not: foreach, elemanları değiştirmeye izin vermez, sadece okumak için kullanılır.<br>
 
 ## 📌 5. break ve continue Kullanımı
@@ -238,3 +240,91 @@ for (int i = 1; i <= 5; i++)<br>
 4  <br>
 5  <br>
 
+# 🖥️ Bölüm 5 - Diziler
+C#'ta diziler (Arrays), aynı türdeki birden fazla veriyi tek bir değişkende saklamaya yarayan veri yapılarıdır.<br>
+
+## 📌 1. Dizi Tanımlama ve Kullanımı
+C#’ta dizi [] (köşeli parantezler) ile tanımlanır.<br>
+### ⚙️ Örnek
+int[] sayilar = new int[5]; // 5 elemanlı bir dizi oluşturuldu
+sayilar[0] = 10;<br>
+sayilar[1] = 20;<br>
+sayilar[2] = 30;<br>
+sayilar[3] = 40;<br>
+sayilar[4] = 50;<br>
+<br>
+Console.WriteLine(sayilar[2]); // 30<br><br>
+
+💯 Diziler sıfırdan (0) başlar. İlk eleman sayilar[0], ikinci eleman sayilar[1] vb.
+
+## 📌 2. Dizi Tanımlamanın Farklı Yolları
+1️⃣ Önceden boyut belirtme (Sonradan değer atama):<br><br>
+int[] dizi = new int[3]; // 3 elemanlı dizi<br>
+dizi[0] = 5;<br>
+dizi[1] = 10;<br>
+dizi[2] = 15;<br><br>
+
+2️⃣ Tanımlarken doğrudan değer verme:<br><br>
+int[] dizi = { 5, 10, 15, 20 };<br><br>
+
+3️⃣ new anahtar kelimesi ile kısa kullanım:<br><br>
+int[] dizi = new int[] { 5, 10, 15, 20 };<br><br>
+
+## 📌 3. Diziler Üzerinde İşlemler
+### ⚙️ for Döngüsü ile Dizi Kullanımı
+int[] sayilar = { 1, 2, 3, 4, 5 };<br>
+<br>
+for (int i = 0; i < sayilar.Length; i++)<br>
+{<br>
+    Console.WriteLine("Eleman: " + sayilar[i]);<br>
+}<br>
+✅ Çıktı:<br>
+Eleman: 1  <br>
+Eleman: 2  <br>
+Eleman: 3  <br>
+Eleman: 4  <br>
+Eleman: 5  <br><br>
+💯 sayilar.Length, dizinin uzunluğunu döndürür.<br>
+
+### ⚙️ foreach Döngüsü ile Dizi Kullanımı
+string[] meyveler = { "Elma", "Muz", "Çilek" };<br>
+<br>
+foreach (string meyve in meyveler)<br>
+{<br>
+    Console.WriteLine(meyve);<br>
+}<br>
+✅ Çıktı:<br>
+Elma  <br>
+Muz  <br>
+Çilek  <br>
+💯 Not: foreach, elemanları değiştirmek için kullanılmaz, sadece okumaya izin verir.<br><br>
+
+## 📌 4. Çok Boyutlu Diziler
+C# dizileri tek boyutlu (int[]), iki boyutlu (int[,] - matris) veya daha fazla boyutlu olabilir.<br><br>
+
+### ⚙️ İki Boyutlu Dizi (Matris)
+int[,] matris = {<br>
+    { 1, 2, 3 },<br>
+    { 4, 5, 6 },<br>
+    { 7, 8, 9 }<br>
+};<br>
+<br>
+Console.WriteLine(matris[1, 2]); // 2. satır, 3. sütun -> 6<br>
+✅ Çıktı: 6 <br><br>
+
+## 📌 5. Array Sınıfı ile Dizi Metotları
+C#’ta diziler üzerinde işlem yapmak için Array sınıfı kullanılır.<br>
+### ⚙️ Örnekler
+int[] sayilar = { 10, 5, 20, 15 };<br>
+<br>
+// Diziyi küçükten büyüğe sıralama<br>
+Array.Sort(sayilar);<br>
+<br>
+// Diziyi ters çevirme<br>
+Array.Reverse(sayilar);<br>
+<br>
+// Belirli bir elemanı arama (varsa index döndürür, yoksa -1)<br>
+int index = Array.IndexOf(sayilar, 15);<br>
+<br>
+// Dizinin tüm elemanlarını temizleme (0'a çevirir)<br>
+Array.Clear(sayilar, 0, sayilar.Length);<br>
