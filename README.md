@@ -717,3 +717,61 @@ class Program<br>
 ✅ Arayüzler sadece metot imzaları içerir.<br>
 ✅ Sınıflar, interface içindeki metotları uygulamak zorundadır.<br><br>
 
+# 🖥️ Bölüm 8 - Ekstra Araçlar
+Bu bölümde 4 tane araç kullanılmıştır. Bunlar MenuStrip, WebBrowser, Chart ve ContextMenuStrip araçlarıdır.<br><br>
+
+## 📌 1. MenuStrip (Menü Çubuğu)
+MenuStrip, Windows Forms uygulamalarında üst kısma eklenen menü çubuğudur. (Dosya, Düzen, Yardım gibi seçenekler içerebilir.)<br><br>
+### ⚙️ MenuStrip Kullanımı
+1️⃣ Visual Studio’da bir Windows Forms uygulaması açın.<br>
+2️⃣ Toolbox’tan MenuStrip bileşenini forma sürükleyin.<br>
+3️⃣ Menü öğelerini (Dosya, Düzen vb.) ekleyin.<br>
+4️⃣ Kod ile olayları (Click vb.) bağlayın.<br>
+
+![image](https://github.com/user-attachments/assets/1d617eca-124b-4c0f-9cbb-2c9d0b12c5f7)<br>
+Burada Kategoriler bölümünde filmin türlerini belirledik. Buradan seçtiğimiz değerlere göre işlemler yapabiliriz. Burada ekstradan WebBrowser aracını kullandık. WebBrowser aracı bir sonraki maddede anlatılacaktır. Buradan seçtiğimiz filme göre videonun fragmanı gelmektedir.<br><br>
+![image](https://github.com/user-attachments/assets/29f53130-8cf4-4177-b129-6a3a6a0d9c3a)<br>
+Buradaki renkler kısmı seçtiğimiz renge göre formun arka planını değiştirir.<br><br>
+![image](https://github.com/user-attachments/assets/b4eb8e39-86ec-487f-8fe8-3fae035a9893)<br>
+Burada hakkımızda kısmına tıklandığında proje ile ilgili bilgiyi, çıkış seçeneğine tıkladığımızda program kapanır.<br><br>
+
+## 📌 2. WebBrowser (Web Tarayıcı)
+WebBrowser, Windows Forms içinde web sayfalarını görüntülemek için kullanılır.<br><br>
+
+### ⚙️ WebBrowser Kullanımı
+1️⃣ Toolbox’tan WebBrowser bileşenini forma ekleyin.<br>
+2️⃣ Örneğin bir buton ekleyip, tarayıcıya bir sayfa yükleyin.<br>
+
+![image](https://github.com/user-attachments/assets/a5905f3b-ea73-4418-a127-d9a41254ada5)
+<br>
+Burada bir tane WebBrowser aracı ekledik. Kategoriler bölümünden herhangi bir kategoriye tıklayarak ilgili filme tıkladığımızda o filme ait fragmanı gelecektir.<br>
+![image](https://github.com/user-attachments/assets/0f097d1b-f448-4152-a6f5-a3230d312db8)
+<br>
+Örnek kod kullanımı bu şekildedir.<br><br>
+
+## 📌 3. Chart (Grafik Çizme)
+Chart bileşeni, verileri grafiksel olarak göstermek için kullanılır.<br><br>
+
+### ⚙️ Chart Kullanımı
+1️⃣ Toolbox’tan Chart bileşenini forma ekleyin.<br>
+2️⃣ Verileri ve grafik türünü belirleyin.<br>
+
+![image](https://github.com/user-attachments/assets/b497626c-597c-4c44-8416-c183fcbce1eb)
+<br>
+![image](https://github.com/user-attachments/assets/f427ba7f-dec9-47c0-8ff4-9b0d05a694af)
+Örnek kod kullanımı bu şekildedir.<br><br>
+
+## 📌 4. ContextMenuStrip (Sağ Tık Menüsü)
+ContextMenuStrip, sağ tıklama menüsü (bağlam menüsü) oluşturmak için kullanılır.<br><br>
+### ⚙️ ContextMenuStrip Kullanımı
+1️⃣ Toolbox’tan ContextMenuStrip bileşenini ekleyin.<br>
+2️⃣ Menü seçenekleri belirleyin.<br>
+3️⃣ Menüyü bir nesneye bağlayın.<br>
+<br>
+![image](https://github.com/user-attachments/assets/07c4abe8-9a78-4389-8b35-23a9f39cd7ef)
+<br>
+Form'a eklediğimizde herhangi bir şey gözükmez ancak Form'un Properties kısmından ContextMenuStrip'e gelinip contextMenuStrip1 olarak belirliyoruz.<br>
+
+![image](https://github.com/user-attachments/assets/0866a27b-0a78-4399-80bd-e74af2d0c31c)
+<br>
+Programı çalıştırdığımız zaman fareye sağ tıkladığımızda buradaki menüler gözükecektir.<br><br>
