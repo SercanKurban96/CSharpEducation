@@ -58,4 +58,73 @@ string mesaj = "Merhaba";<br>
 bool dogruMu = true;<br>
 var otomatikBelirlenen = 42;  // int olarak algılanır<br>
 
-✅ C#’ta değişken isimleri harfle veya _ (alt çizgi) ile başlamalıdır, rakamla başlayamaz. Ayrıca, büyük-küçük harf duyarlıdır (sayi ile Sayi farklı değişkenlerdir).
+✅ C#’ta değişken isimleri harfle veya _ (alt çizgi) ile başlamalıdır, rakamla başlayamaz. Ayrıca, büyük-küçük harf duyarlıdır (sayi ile Sayi farklı değişkenlerdir).<br><br>
+
+# 🖥️ Bölüm 3 - Karar Yapıları
+C#'ta karar yapıları, programın belirli koşullara göre farklı yollar izlemesini sağlar. Genellikle koşul ifadeleri (if, switch gibi) ile gerçekleştirilir.<br><br>
+
+## 📌 1. if - else Karar Yapısı
+Belirli bir koşul doğru (true) ise bir kod bloğu çalıştırılır, aksi takdirde diğer kod bloğu çalıştırılır.<br>
+
+### ⚙️ Kullanım Örnekleri
+int sayi = 10;<br>
+
+if (sayi > 0)<br>
+{<br>
+    Console.WriteLine("Sayı pozitiftir.");<br>
+}<br>
+else<br>
+{<br>
+    Console.WriteLine("Sayı negatiftir veya sıfırdır.");<br>
+}<br>
+
+### ⚙️ if - else if - else Kullanımı
+int not = 85;<br>
+
+if (not >= 90)<br>
+{<br>
+    Console.WriteLine("Harf Notu: A");<br>
+}<br>
+else if (not >= 80)<br>
+{<br>
+    Console.WriteLine("Harf Notu: B");<br>
+}<br>
+else if (not >= 70)<br>
+{<br>
+    Console.WriteLine("Harf Notu: C");<br>
+}<br>
+else<br>
+{<br>
+    Console.WriteLine("Harf Notu: F");<br>
+}<br>
+
+## 📌 2. switch Karar Yapısı
+Bir değişkenin değerine bağlı olarak farklı kod bloklarını çalıştırmak için kullanılır.<br>
+### ⚙️ Kullanım Örneği
+int gun = 3;
+
+switch (gun)<br>
+{<br>
+    case 1:<br>
+        Console.WriteLine("Pazartesi");<br>
+        break;<br>
+    case 2:<br>
+        Console.WriteLine("Salı");<br>
+        break;<br>
+    case 3:<br>
+        Console.WriteLine("Çarşamba");<br>
+        break;<br>
+    default:<br>
+        Console.WriteLine("Geçersiz gün!");<br>
+        break;<br>
+}<br>
+
+✅ break komutu, her durumu sonlandırır. Eğer break konmazsa, sonraki case blokları da çalışır.
+
+## 📌 3. Ternary Operator (? :)
+Tek satırda basit bir if-else işlemi yapmayı sağlar.<br>
+### ⚙️ Kullanım Örneği
+int sayi = 15;<br>
+string sonuc = (sayi % 2 == 0) ? "Çift Sayı" : "Tek Sayı";<br>
+Console.WriteLine(sonuc);<br>
+✅Eğer sayi çiftse "Çift Sayı" yazdırır, aksi halde "Tek Sayı" yazdırır.<br>br>
