@@ -776,7 +776,7 @@ Form'a eklediğimizde herhangi bir şey gözükmez ancak Form'un Properties kıs
 <br>
 Programı çalıştırdığımız zaman fareye sağ tıkladığımızda buradaki menüler gözükecektir.<br><br>
 
-# 🖥️ Bölüm 8 - Ekstra Yapılar
+# 🖥️ Bölüm 9 - Ekstra Yapılar
 Bu bölümde Random kullanımı, CAPTCHA oluşturma, formlar arası veri taşıma, Point, Enum, Matematik Fonksiyonları ve Dinamik Araçlar konuları içermektedir.<br><br>
 
 ## 📌 1. Random (Rastgele Sayı Üretme)
@@ -856,3 +856,258 @@ btn.Size = new Size(100, 50);<br>
 btn.Location = new Point(50, 50);<br>
 btn.Click += (s, e) => MessageBox.Show("Butona tıklandı!");<br>
 this.Controls.Add(btn);<br><br>
+
+# 🖥️ Bölüm 10 - Veri Tabanı SQL
+
+## 📌 1. SQL Veri Tabanı Nedir?
+SQL (Structured Query Language), ilişkisel veri tabanlarını yönetmek için kullanılan bir sorgulama dilidir.<br><br>
+### ✅ SQL Kullanılan Popüler Veri Tabanları:
+📍 Microsoft SQL Server<br>
+📍 MySQL<br>
+📍 PostgreSQL<br>
+📍 Oracle Database<br>
+📍 SQLite<br>
+📍 MariaDB<br><br>
+Bu veri tabanları, tablolar, sütunlar ve ilişkiler ile çalışır.<br><br>
+
+## 📌 SQL’de Veri Tabanı (Database) Oluşturma
+Bir veri tabanı oluşturmak için CREATE DATABASE komutu kullanılır.<br><br>
+### ✅ Basit Veri Tabanı Oluşturma
+CREATE DATABASE MusteriDB;<br><br>
+📍 Bu komut, "MusteriDB" adında bir veri tabanı oluşturur.<br><br>
+
+## 📌 Veri Tabanını Kullanma (USE DATABASE)
+SQL Server'da çalışacağımız veri tabanını seçmek için USE komutunu kullanırız.<br><br>
+USE MusteriDB;<br><br>
+📍 Bundan sonra tüm işlemler "MusteriDB" veri tabanında yapılır.<br><br>
+
+## 📌 SQL’de Tablo (Table) Oluşturma
+Bir veri tabanında tablolar kullanarak verileri düzenleriz. CREATE TABLE komutu ile yeni bir tablo oluşturabiliriz.<br><br>
+### ✅ Örnek: "Musteriler" Tablosu Oluşturma
+
+CREATE TABLE Musteriler (<br>
+    MusteriID INT PRIMARY KEY,  -- Birincil anahtar (Benzersiz Kimlik)<br>
+    Ad VARCHAR(50) NOT NULL,    -- Metin (Maksimum 50 karakter) ve boş olamaz<br>
+    Soyad VARCHAR(50) NOT NULL,<br>
+    Yas TINYINT CHECK (Yas >= 18), -- Yaş en az 18 olmalı<br>
+    Email VARCHAR(100) UNIQUE,   -- Email benzersiz olmalı<br>
+    KayitTarihi DATETIME DEFAULT GETDATE() -- Varsayılan olarak şu anki tarih<br>
+);<br>
+### 📌 Açıklamalar:
+📍 MusteriID INT PRIMARY KEY → MusteriID sütunu birincil anahtar olarak kullanılır (benzersiz olmalı).<br>
+📍 VARCHAR(50) NOT NULL → Ad ve Soyad sütunları boş bırakılamaz.<br>
+📍 CHECK (Yas >= 18) → Yas sütunu en az 18 olmalıdır.<br>
+📍 UNIQUE → Email sütunu benzersiz olmalıdır.<br>
+📍 DEFAULT GETDATE() → KayitTarihi varsayılan olarak o anki tarih ve saat olur.<br><br>
+
+## 📌 SQL’de Tabloya Veri Ekleme (INSERT INTO)
+Bir tabloya veri eklemek için INSERT INTO komutu kullanılır.<br><br>
+
+INSERT INTO Musteriler (MusteriID, Ad, Soyad, Yas, Email)<br>
+VALUES (1, 'Sercan', 'Kurban', 29, 'sercan@gmail.com');<br><br>
+📍 Bu komut, "Musteriler" tablosuna bir müşteri ekler.<br><br>
+
+## 📌 SQL’de Tabloları Görüntüleme
+Mevcut tabloları listelemek için:<br><br>
+SELECT * FROM Musteriler;<br><br>
+📍 Bu sorgu, "Musteriler" tablosundaki tüm verileri getirir.<br><br>
+
+## 📌 SQL’de Tabloyu Güncelleme (UPDATE)
+Tablodaki verileri güncellemek için UPDATE komutu kullanılır.<br><br>
+UPDATE Musteriler<br>
+SET Email = 'sercan.kurban@gmail.com'<br>
+WHERE MusteriID = 1;<br><br>
+📍 Bu komut, ID’si 1 olan müşterinin e-posta adresini değiştirir.<br><br>
+
+## 📌 SQL’de Tablodaki Elemanı Silme
+Tablodaki verileri silmek için DELETE komutu kullanılır.<br><br>
+DELETE FROM Musteriler<br>
+WHERE MusteriID = 1;<br><br>
+📍 Bu komut, ID’si 1 olan müşteriyi siler.<br><br>
+
+## 📌 SQL’de Tablo Silme (DROP TABLE)
+Bir tabloyu tamamen silmek için DROP TABLE komutu kullanılır.<br><br>
+DROP TABLE Musteriler;<br><br>
+📍 Bu komut "Musteriler" tablosunu tamamen kaldırır.<br><br>
+
+## 📌 SQL’de Veri Tabanı Silme (DROP DATABASE)
+Bir veri tabanını silmek için DROP DATABASE komutu kullanılır.<br><br>
+DROP DATABASE MusteriDB;<br><br>
+❗ <strong>Dikkat: Bu komut, tüm tablolar ve verilerle birlikte veri tabanını tamamen siler!</strong><br><br>
+
+## 📌 SQL’de Tablo Yapısını Değiştirme (ALTER TABLE)
+Mevcut bir tabloya yeni bir sütun eklemek veya var olan bir sütunu değiştirmek için ALTER TABLE kullanılır.<br><br>
+### ✅ Yeni Sütun Ekleme
+ALTER TABLE Musteriler<br>
+ADD Telefon VARCHAR(15);<br><br>
+📍 Bu komut, "Musteriler" tablosuna "Telefon" adında yeni bir sütun ekler.<br><br>
+
+### ✅ Sütun Silme
+ALTER TABLE Musteriler<br>
+DROP COLUMN Telefon;<br>
+📍 Bu komut, "Telefon" sütununu siler.<br><br>
+
+## 📌 2. SQL Veri Tipleri Nelerdir?
+SQL’de veri tipleri 3 ana gruba ayrılır:<br><br>
+![image](https://github.com/user-attachments/assets/288d0fbd-74a5-4ff9-ad6c-399e2d082bb1)
+<br>
+### ✅ 2.1 Sayısal (Numeric) Veri Tipleri
+Sayılarla işlem yapmak için kullanılan veri tipleridir.<br><br>
+![image](https://github.com/user-attachments/assets/26e9ea71-cd5e-4dd7-93f8-6cb6f80599e5)
+<br>
+### ⚙️ Örnek Kullanım
+CREATE TABLE Musteriler (<br>
+    MusteriID INT PRIMARY KEY,<br>
+    Yas TINYINT,<br>
+    Maas DECIMAL(10,2)  -- 10 basamaklı, 2 ondalık<br>
+);<br><br>
+### ✅ 2.2 Metinsel (String) Veri Tipleri
+Metin verileri için kullanılan veri tipleridir.<br><br>
+![image](https://github.com/user-attachments/assets/304af2f3-dc81-4d91-94ca-08c738344c36)
+<br>
+### ⚙️ Örnek Kullanım
+CREATE TABLE Urunler (<br>
+    UrunID INT PRIMARY KEY,<br>
+    UrunAdi VARCHAR(100),<br>
+    Aciklama TEXT<br>
+);<br>
+<br>
+💯 CHAR(10) → "KİTAP " (Boşluk bırakır)
+💯 VARCHAR(10) → "KİTAP" (Boşluk bırakmaz)
+
+### ✅ 2.3 Tarih ve Zaman (Date/Time) Veri Tipleri
+Tarih ve saat bilgilerini saklamak için kullanılır.<br><br>
+![image](https://github.com/user-attachments/assets/45cf71c6-9c13-4a6a-bc38-04e3214d2ce1)
+<br>
+CREATE TABLE Siparisler (<br>
+    SiparisID INT PRIMARY KEY,<br>
+    SiparisTarihi DATETIME,<br>
+    TeslimTarihi DATE<br>
+);<br><br>
+
+## 📌 3. Diğer Özel Veri Tipleri
+![image](https://github.com/user-attachments/assets/bb6bb1aa-5b79-4a09-8616-e884f9b529d3)
+<br>
+### ⚙️ Örnek Kullanım
+CREATE TABLE Loglar (<br>
+    LogID INT PRIMARY KEY,<br>
+    LogDetay JSON<br>
+);<br><br>
+
+C# ile SQL Server bağlantısını kurmak için ilk olarak bağlantı adresini almamız gerekmektedir. Adımlar aşağıdaki gibidir.<br><br>
+![image](https://github.com/user-attachments/assets/1efff21f-1dd5-42c4-9271-4b2ebd7cf020)
+<br>
+Yukarıda yer alan menülerden Project kısmına gelinip Add New Data Source kısmına tıklanır.<br>
+![image](https://github.com/user-attachments/assets/972e5642-386a-448e-b25e-546ab7deb60c)<br>
+Karşımıza çıkan Database seçili halde gelecektir. Next diyoruz.<br>
+![image](https://github.com/user-attachments/assets/5c319097-b54e-4229-834a-eab3d3cced07)<br>
+Tekrardan Next diyoruz.<br>
+![image](https://github.com/user-attachments/assets/89e62977-893e-4d41-ad36-2fdb3e888cf6)<br>
+Daha önceden herhangi bir veri tabanı işlemi yapmadıysanız buradaki PersonelVeriTabaniConnectionString kısmı sizde boş gözükecektir. Sağ tarafta yer alan New Connection butonuna tıklıyoruz.<br>
+![image](https://github.com/user-attachments/assets/c566fdad-0595-4dbc-ab0b-7ac19b506332)<br>
+Burada Server Name kısmı sizin SQL veri tabanı adresinizin ismidir. SQL adresinizi öğrenmek için;<br>
+![image](https://github.com/user-attachments/assets/3db70985-9e95-4803-8c28-e884251ba961)<br>
+SQL'e gelip sol tarafta yer alan Object Explorer kısmındaki menülerin en üstündekine sağ tıklayıp Properties seçeneğine gelinir.<br>
+![image](https://github.com/user-attachments/assets/f0ac6615-bc5d-41ea-a582-9d2d111c76fb)<br>
+Buradaki Name kısmı sizin SQL adresinizdir. Burayı direkt kopyalayarak C#'ta Server Name kısmına yapıştırabiliriz.<br>
+Tekrardan Connection kısmına gelip Encrypt kısmını isterseniz Mandatory(True), isterseniz Optional(False) yapabilirsiniz. Mandatory yaptığınız zaman Trust Server Certificate kısmının seçili olması gerekmektedir. Veri tabanımızı seçtikten sonra OK diyoruz.<br>
+![image](https://github.com/user-attachments/assets/f3264b1d-396e-4efc-8672-1147afbf9e80)<br>
+Aşağıdaki işareti seçili hale getirdikten sonra bağlantı adresimiz bu şekilde olacaktır. Bu adresi kopyalayıp Cancel diyoruz veya direkt verileri hazır olarak tutmak için Next diyoruz.<br>
+![image](https://github.com/user-attachments/assets/c2ccc85f-0639-4996-b0dd-e9c4a95a8fc7)<br>
+Ardından seçmek istediğimiz tabloyu seçiyoruz, burada istediğimiz sütunları alabiliriz. Burada tamamını alıp Finish diyoruz.<br><br>
+
+## 📌 1. Gerekli Kütüphaneler
+C# ile SQL Server’a bağlanmak için System.Data.SqlClient kütüphanesini kullanırız.<br><br>
+using System;<br>
+using System.Data;<br>
+using System.Data.SqlClient; Kullanacağımız kütüphane bu olacaktır.<br><br>
+
+## 📌 2. SQL Bağlantı Dizesi (Connection String)
+Önce SQL Server’a bağlanmak için bir connection string tanımlamalıyız.<br><br>
+### ✅ SQL Server’a Bağlantı Kurma
+SqlConnection baglanti = new SqlConnection("Data Source=SERCAN\\SQLEXPRESS;Initial Catalog=PersonelVeriTabani;Integrated Security=True");<br><br>
+📍 Data Source → SQL Server adını belirtir (Local ise localhost veya . kullanılır).<br>
+📍 Initial Catalog → Kullanılacak veri tabanının adıdır.<br>
+📍 Integrated Security=True → Windows kimlik doğrulaması kullanır.<br>
+
+❗ Eğer SQL kullanıcı adı ve şifre ile bağlanıyorsanız:<br><br>
+SqlConnection baglanti = new SqlConnection("Data Source=SERCAN\\SQLEXPRESS;Initial Catalog=PersonelVeriTabani;User Id=sa;Password=1234;");<br><br>
+
+## 📌 3. SQL Bağlantısı Açma ve Kapatma
+using (SqlConnection conn = new SqlConnection(connectionString))<br>
+{<br>
+    try<br>
+    {<br>
+        conn.Open();<br>
+        Console.WriteLine("Bağlantı başarılı!");<br>
+    }<br>
+    catch (Exception ex)<br>
+    {<br>
+        Console.WriteLine("Bağlantı hatası: " + ex.Message);<br>
+    }<br>
+}<br><br>
+✅ using bloğu sayesinde bağlantı iş bittikten sonra otomatik kapanır.<br><br>
+
+## 📌 4. CRUD İşlemleri
+
+![image](https://github.com/user-attachments/assets/03ed1086-99f5-4603-b706-a466f1aa2273)<br>
+Burada örnek olarak bir Personel Kayıt Sistemi projesi oluşturduk. Şimdi Create (Ekle), Read (Oku), Update (Güncelle), Delete (Sil) işlemlerini yapalım.<br><br>
+
+### ✅ 4.1 Veri Ekleme (CREATE - INSERT INTO)
+private void btnKaydet_Click(object sender, EventArgs e)<br>
+{<br>
+    baglanti.Open();<br>
+    SqlCommand komut = new SqlCommand("insert into Tbl_Personel (PerAd,PerSoyad,PerSehir,PerMaas,PerMeslek,PerDurum) values (@p1,@p2,@p3,@p4,@p5,@p6)", baglanti);<br>
+    komut.Parameters.AddWithValue("@p1", txtPersonelAd.Text);<br>
+    komut.Parameters.AddWithValue("@p2", txtPersonelSoyad.Text);<br>
+    komut.Parameters.AddWithValue("@p3", cmbSehir.Text);<br>
+    komut.Parameters.AddWithValue("@p4", mskMaas.Text);<br>
+    komut.Parameters.AddWithValue("@p5", txtMeslek.Text);<br>
+    komut.Parameters.AddWithValue("@p6", label8.Text);<br>
+    komut.ExecuteNonQuery();<br>
+    baglanti.Close();<br>
+    MessageBox.Show("Personel Eklendi");<br>
+    this.tbl_PersonelTableAdapter.Fill(this.personelVeriTabaniDataSet.Tbl_Personel);<br>
+}<br><br>
+
+📍 Kaydetme işlemi için ilk olarak bağlantımızı açıyoruz.<br>
+📍 Ardından CRUD işlemlerini veya başka sorgular yazmak için SqlCommand komutunu kullanıyoruz.<br>
+📍 Daha sonra Parameters.AddWithValue ile tek tek atamalarımızı yapıyoruz.<br>
+📍 Sorguyu kaydetmek için ExecuteNonQuery komutunu kullanıyoruz ve bağlantıyı kapatıyoruz.<br><br>
+
+### ✅ 4.2 Veri Okuma (READ - SELECT)
+private void btnListele_Click(object sender, EventArgs e)<br>
+{<br>
+    this.tbl_PersonelTableAdapter.Fill(this.personelVeriTabaniDataSet.Tbl_Personel);<br>
+}<br><br>
+Bu kod hazır hale Form'un Load kısmına gelecektir.<br><br>
+
+### ✅ 4.3 Veri Güncelleme (UPDATE)
+private void btnGuncelle_Click(object sender, EventArgs e)<br>
+{<br>
+    baglanti.Open();<br>
+    SqlCommand komut = new SqlCommand("update Tbl_Personel set PerAd=@p1,PerSoyad=@p2,PerSehir=@p3,PerMaas=@p4,PerDurum=@p5,PerMeslek=@p6 where PersonelID=@p7", baglanti);<br>
+    komut.Parameters.AddWithValue("@p1", txtPersonelAd.Text);<br>
+    komut.Parameters.AddWithValue("@p2", txtPersonelSoyad.Text);<br>
+    komut.Parameters.AddWithValue("@p3", cmbSehir.Text);<br>
+    komut.Parameters.AddWithValue("@p4", mskMaas.Text);<br>
+    komut.Parameters.AddWithValue("@p5", label8.Text);<br>
+    komut.Parameters.AddWithValue("@p6", txtMeslek.Text);<br>
+    komut.Parameters.AddWithValue("@p7", txtPersonelID.Text);<br>
+    komut.ExecuteNonQuery();<br>
+    baglanti.Close();<br>
+    MessageBox.Show("Personel Güncellendi");<br>
+    this.tbl_PersonelTableAdapter.Fill(this.personelVeriTabaniDataSet.Tbl_Personel);<br>
+}<br><br>
+
+### ✅ 4.4 Veri Silme (DELETE)
+private void btnSil_Click(object sender, EventArgs e)<br>
+{<br>
+    baglanti.Open();<br>
+    SqlCommand komut = new SqlCommand("delete from Tbl_Personel where PersonelID=@p1", baglanti);<br>
+    komut.Parameters.AddWithValue("@p1", txtPersonelID.Text);<br>
+    komut.ExecuteNonQuery();<br>
+    baglanti.Close();<br>
+    MessageBox.Show("Personel Silindi");<br>
+    this.tbl_PersonelTableAdapter.Fill(this.personelVeriTabaniDataSet.Tbl_Personel);<br>
+}<br><br>
