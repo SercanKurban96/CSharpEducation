@@ -1,4 +1,4 @@
-# <img height="50" src="https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png"> Uygulama Geliştirerek C# Öğrenin: A'dan Z'ye Eğitim Seti
+![image](https://github.com/user-attachments/assets/23c45924-a03e-4e00-9bea-aeea58f63d75)# <img height="50" src="https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png"> Uygulama Geliştirerek C# Öğrenin: A'dan Z'ye Eğitim Seti
 👋 Merhabalar, oluşturmuş olduğum bu repo, Murat Yücedağ hocamızın Udemy üzerinden hazırlamış olduğu Uygulama Geliştirerek C# Öğrenin: A'dan Z'ye Eğitim Seti süresince tamamlamış olduğum projeleri içermektedir. Bu eğitimde C# Windows Form Uygulaması'ndan Temel Araç Kullanımları ile başlayıp OOP ile N Katmanlı Mimari'de proje geliştirmeye kadar anlatılmaktadır.
 <br><hr>
 # 🖥️ Bölüm 1 - Temel Araç Kullanımları
@@ -1557,7 +1557,100 @@ private void dgvDersler_CellClick(object sender, DataGridViewCellEventArgs e)<br
 <hr>
 
 # 🖥️ Bölüm 16 - Entity Framework
+Entity Framework (EF), C# ile veritabanı işlemlerini kolaylaştıran bir ORM (Object-Relational Mapping) kütüphanesidir. Yani, SQL komutları yazmadan veritabanı ile çalışmamızı sağlar.<br><br>
 
+✔ SQL sorgularını otomatik oluşturur.<br>
+✔ Verileri nesne olarak kullanmamızı sağlar.<br>
+✔ Veritabanı işlemlerini hızlandırır.<br>
+✔ Kodun daha okunabilir ve yönetilebilir olmasını sağlar.<br><br>
 
+## 📌 Entity Framework Kullanım Yöntemleri
+Entity Framework’ü 3 farklı şekilde kullanabiliriz:<br><br>
+![image](https://github.com/user-attachments/assets/a1ff1068-c1b2-4266-bbbd-39f5f02caffa)
+<br><br>
 
+Bu eğitimde DbFirst modelini kullanacağız.<br><br>
+Katmanımıza sağ tıklayarak Add kısmından New Item seçilir.<br>
+![image](https://github.com/user-attachments/assets/eb127591-3d20-4edc-870f-42cda4b12746)<br>
+Sol taraftan Data kısmını seçerek ADO.NET Entity Data Model seçtikten sonra Add diyoruz.<br>
+![image](https://github.com/user-attachments/assets/6f80a266-3782-4678-9909-776079c2ec64)<br>
+Burada başlangıçta EF Designer from Database seçili hale gelecektir. Next diyoruz.<br>
+![image](https://github.com/user-attachments/assets/ce053590-458d-4786-9f2f-be987f3cc92f)<br>
+Veri tabanımızı seçerek Next diyoruz.<br>
+![image](https://github.com/user-attachments/assets/9edd3a83-71ec-4a0d-9668-ba627ff2a3a3)<br>
+Buradan istediğimiz tabloları seçiyoruz ve Finish diyoruz.<br>
+![image](https://github.com/user-attachments/assets/36e1dfa8-6958-4040-8d11-87d7788c0f9a)<br>
+Modelimiz bu şekilde olacaktır.<br><br>
 
+![image](https://github.com/user-attachments/assets/d2734f84-0b1f-4cbe-81a9-f0a589e4b5f5)<br>
+Kategori işlemleri için Entity Framework ile temel CRUD işlemlerini yapıyoruz.<br><br>
+
+Global alana yazılacak kod;<br>
+EntityUrunDbEntities db = new EntityUrunDbEntities();<br>
+
+CRUD işlemleri için yazılacak kodlar;<br><br>
+
+private void btnListele_Click(object sender, EventArgs e)<br>
+{<br>
+    var kategoriler = db.TBLKATEGORI.ToList();<br>
+    dgvKategori.DataSource = kategoriler;<br>
+}<br>
+<br>
+private void btnEkle_Click(object sender, EventArgs e)<br>
+{<br>
+    TBLKATEGORI t = new TBLKATEGORI();<br>
+    t.KategoriAd = txtKategoriAdi.Text;<br>
+    db.TBLKATEGORI.Add(t);<br>
+    db.SaveChanges();<br>
+    MessageBox.Show("Kategori Eklendi");<br>
+}<br>
+<br>
+private void btnSil_Click(object sender, EventArgs e)<br>
+{<br>
+    int x = Convert.ToInt32(txtKategoriID.Text);<br>
+    var ktgr = db.TBLKATEGORI.Find(x);<br>
+    db.TBLKATEGORI.Remove(ktgr);<br>
+    db.SaveChanges();<br>
+    MessageBox.Show("Kategori Silindi");<br>
+}<br>
+<br>
+private void btnGuncelle_Click(object sender, EventArgs e)<br>
+{<br>
+    int x = Convert.ToInt32(txtKategoriID.Text);<br>
+    var ktgr = db.TBLKATEGORI.Find(x);<br>
+    ktgr.KategoriAd = txtKategoriAdi.Text;<br>
+    db.SaveChanges();<br>
+    MessageBox.Show("Kategori Güncellendi");<br>
+}<br>
+<br>
+private void dgvKategori_CellClick(object sender, DataGridViewCellEventArgs e)<br>
+{<br>
+    try<br>
+    {<br>
+        txtKategoriID.Text = dgvKategori.Rows[e.RowIndex].Cells[0].Value.ToString();<br>
+        txtKategoriAdi.Text = dgvKategori.Rows[e.RowIndex].Cells[1].Value.ToString();<br>
+    }<br>
+    catch (Exception)<br>
+    {<br>
+<br>
+        throw;<br>
+    }       <br>
+}<br>
+<br>
+
+<hr>
+
+# 🖥️ Bölüm 17 - OOP ile N Katmanlı Mimaride Proje Geliştirme
+N Katmanlı Mimari, C# projelerinde kodları farklı katmanlara bölerek daha modüler, okunabilir ve yönetilebilir hale getiren bir mimari modeldir.<br><br>
+
+Bu mimariyi kullanarak:<br>
+✔ Kod tekrarını önleriz.<br>
+✔ Bağımsız bileşenler oluşturarak her katmanı ayrı geliştirebiliriz.<br>
+✔ Bakımı ve test edilmesi kolay bir yapı kurabiliriz.<br><br>
+
+## 📌 Katmanlar Nelerdir?
+Genellikle 3 veya daha fazla katmandan oluşur. En yaygın model 3 katmanlı mimaridir:<br><br>
+![image](https://github.com/user-attachments/assets/3845693a-6795-49f8-8ea6-8923d6bdbbb9)<br><br>
+Burada EntityLayer katmanını da kullanacağız.<br><br>
+
+Katman eklemek için ilgili projeye yeni bir proje ekliyoruz. Seçeceğimiz uygulama ise bir Class Library (.NET Framework) olacaktır. İsmini EntityLayer olarak belirliyoruz.<br>
