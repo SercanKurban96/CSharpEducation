@@ -328,3 +328,157 @@ int index = Array.IndexOf(sayilar, 15);<br>
 <br>
 // Dizinin tüm elemanlarını temizleme (0'a çevirir)<br>
 Array.Clear(sayilar, 0, sayilar.Length);<br>
+
+# 🖥️ Bölüm 6 - Metotlar
+C#'ta metotlar, belirli bir görevi yerine getiren kod bloklarıdır. Metotlar sayesinde kod tekrarını önleyebilir, kodu daha düzenli ve okunabilir hale getirebiliriz.<br>
+
+## 📌 1. Metot Tanımlama ve Kullanımı
+Bir metot geri_dönüş_tipi, metot_adı, parametreler ve gövde içerir.<br>
+### ⚙️ Temel Metot Tanımı:
+erişim_belirteci dönüş_tipi MetotAdi(parametreler)<br>
+{<br>
+    // Metot içeriği<br>
+    return değer; // (Eğer dönüş tipi void değilse)<br>
+}<br>
+<br>
+### ⚙️ Örnek: Parametresiz ve Geri Dönüş Değeri Olmayan Metot
+using System;<br>
+<br>
+class Program<br>
+{<br>
+    static void SelamVer()<br>
+    {<br>
+        Console.WriteLine("Merhaba, hoş geldiniz!");<br>
+    }<br>
+<br>
+    static void Main()<br>
+    {<br>
+        SelamVer(); // Metot çağrılıyor<br>
+    }<br>
+}<br>
+<br>
+✅ Çıktı:<br>
+Merhaba, hoş geldiniz!<br>
+💯 Not: void metodu bir değer döndürmez.<br><br>
+
+## 📌 2. Parametreli Metotlar
+Metotlara parametre ekleyerek dinamik hale getirebiliriz.<br>
+
+static void Topla(int sayi1, int sayi2)<br>
+{<br>
+    int toplam = sayi1 + sayi2;<br>
+    Console.WriteLine("Toplam: " + toplam);<br>
+}<br>
+<br>
+static void Main()<br>
+{<br>
+    Topla(5, 10);  // Çıktı: Toplam: 15<br>
+}<br>
+💯 Not: sayi1 ve sayi2, metoda gönderilen parametrelerdir.<br><br>
+
+## 📌 3. Geri Değer Döndüren Metotlar (return)
+Bazı metotlar bir sonuç döndürmelidir. Bu tür metotlarda void yerine bir veri türü (örneğin int, string, double) kullanılır.<br><br>
+
+static int KareAl(int sayi)<br>
+{<br>
+    return sayi * sayi;<br>
+}<br>
+<br>
+static void Main()<br>
+{<br>
+    int sonuc = KareAl(4);<br>
+    Console.WriteLine("Sonuç: " + sonuc);  // Çıktı: Sonuç: 16<br>
+}<br><br>
+
+## 📌 4. Metotlarda ref ve out Kullanımı
+C#’ta metotlara referans (ref) veya çıkış (out) parametreleri göndererek değişkenlerin değerlerini değiştirebiliriz.<br>
+
+### ⚙️ ref Kullanımı (Mevcut değeri değiştirme)
+static void DegerArttir(ref int sayi)<br>
+{<br>
+    sayi += 10;<br>
+}<br>
+<br>
+static void Main()<br>
+{<br>
+    int x = 5;<br>
+    DegerArttir(ref x);<br>
+    Console.WriteLine("Yeni Değer: " + x);  // Çıktı: Yeni Değer: 15<br>
+}<br>
+<br>
+💯 Not: ref kullanırken değişkenin önceden atanmış olması gerekir.<br><br>
+
+### ⚙️ out Kullanımı (Değer atamak için)
+out, metoda veri göndermek yerine metottan veri almak için kullanılır.<br><br>
+static void Hesapla(int a, int b, out int toplam, out int fark)<br>
+{<br>
+    toplam = a + b;<br>
+    fark = a - b;<br>
+}<br>
+<br>
+static void Main()<br>
+{<br>
+    int t, f;<br>
+    Hesapla(10, 4, out t, out f);<br>
+    Console.WriteLine("Toplam: " + t + ", Fark: " + f);  // Çıktı: Toplam: 14, Fark: 6<br>
+}<br>
+<br>
+💯 Not: out parametrelerine metot içinde değer atanması zorunludur.<br><br>
+
+## 📌 5. Aşırı Yükleme (Method Overloading)
+Aynı isimde fakat farklı parametre tipleri veya sayısına sahip metotlar oluşturabiliriz.<br><br>
+
+static int Topla(int a, int b)<br>
+{<br>
+    return a + b;<br>
+}<br>
+<br>
+static double Topla(double a, double b)<br>
+{<br>
+    return a + b;<br>
+}<br>
+<br>
+static void Main()<br>
+{<br>
+    Console.WriteLine(Topla(5, 10));       // Çıktı: 15 (int)<br>
+    Console.WriteLine(Topla(4.5, 2.5));    // Çıktı: 7 (double)<br>
+}<br>
+<br>
+💯 Not: Derleyici, parametrelere göre hangi metodu çağıracağını belirler.<br><br>
+
+## 📌 6. Varsayılan (Default) Parametreler
+Metotlara varsayılan değerler atanabilir.<br><br>
+
+static void MesajGoster(string mesaj = "Merhaba!")<br>
+{<br>
+    Console.WriteLine(mesaj);<br>
+}<br>
+<br>
+static void Main()<br>
+{<br>
+    MesajGoster();               // Çıktı: Merhaba!<br>
+    MesajGoster("Hoş geldin!");  // Çıktı: Hoş geldin!<br>
+}<br>
+<br>
+
+## 📌 7. Metotlar ve static Kullanımı
+static metotlar, sınıf örneği oluşturmadan çağrılabilir.<br><br>
+### ⚙️ Örnek
+static void Yazdir() { Console.WriteLine("Merhaba!"); }<br>
+
+❗ <strong>Eğer bir metot static değilse, onu kullanabilmek için sınıftan bir örnek (instance) oluşturmalısınız.</strong><br><br>
+
+class HesapMakinesi<br>
+{<br>
+    public int Carp(int a, int b)<br>
+    {<br>
+        return a * b;<br>
+    }<br>
+}<br>
+<br>
+static void Main()<br>
+{<br>
+    HesapMakinesi h = new HesapMakinesi();  // Nesne oluşturuldu<br>
+    Console.WriteLine(h.Carp(3, 4));        // Çıktı: 12<br>
+}<br>
+<br>
