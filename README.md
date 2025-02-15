@@ -1238,3 +1238,41 @@ class Program<br>
 }<br><br>
 ✔ ShowNewFolderButton = true; → Kullanıcının yeni klasör oluşturmasına izin verir.<br>
 ✔ SelectedPath → Seçilen klasörün tam yolunu döndürür.<br><br>
+
+# 🖥️ Bölüm 12 - Hastane Yönetim ve Randevu Sistemi Otomasyon Projesi
+Bu bölümde C# ve SQL ile bilgilerimizi pekiştirerek bir tane otomasyon hazırladık.<br><br>
+📍 Bu otomasyonda 3 tane kullanıcı girişi (hasta, doktor ve sekreter),<br> 
+📍 Hasta giriş veya kayıt olma özelliği,<br> 
+📍 Hasta branş, doktor ve şikayetini yazarak randevu alabilme,<br> 
+📍 Hasta bilgilerini düzenleme,<br> 
+📍 Doktor giriş yapabilme,<br> 
+📍 Doktor duyuruları görebilme, randevuları görebilme ve bilgileri düzenleme,<br> 
+📍 Sekreter giriş yapabilme,<br> 
+📍 Sekreter doktor paneli, branş panelini yönetebilme,<br> 
+📍 Sekreter duyuru oluşturabilme,<br> 
+📍 Sekreter randevu oluşturma işlemlerini yapmaktadır.<br><br> 
+
+Projeye ait ekran görüntüleri;<br><br>
+
+![image](https://github.com/user-attachments/assets/934643d6-723a-4f3a-9777-845081b685fc)<br><br>
+![image](https://github.com/user-attachments/assets/5c5963f1-b685-4976-aa08-c23520a973c6)<br><br>
+![image](https://github.com/user-attachments/assets/36f0c0fa-8b93-4c2a-901a-ed652ba99bb4)<br><br>
+![image](https://github.com/user-attachments/assets/75c68cc2-ff5c-4fc1-8a08-26d43b57c272)<br><br>
+![image](https://github.com/user-attachments/assets/fd9bd96e-88c8-46c3-804a-66484bef053c)<br><br>
+![image](https://github.com/user-attachments/assets/dd0100f0-34e7-4532-8abb-2b937377238f)<br><br>
+![image](https://github.com/user-attachments/assets/8de82da0-00fc-437c-a1ce-cb953b88bdbd)<br><br>
+![image](https://github.com/user-attachments/assets/1afa5308-aa57-4f01-8ffb-831f3edaa2ec)<br><br>
+![image](https://github.com/user-attachments/assets/71bdf04f-6601-476d-9627-07e488b7f585)<br><br>
+![image](https://github.com/user-attachments/assets/c9bc8d32-c41f-40ff-841d-b50b2b5a09e8)<br><br>
+![image](https://github.com/user-attachments/assets/a26421f8-1ebb-4ba3-9523-a0e0f77465f1)<br><br>
+![image](https://github.com/user-attachments/assets/f4cf7188-9f79-4b55-91c3-7943dfbfd5d0)<br><br>
+
+
+
+
+
+
+
+
+
+
