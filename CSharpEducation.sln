@@ -131,6 +131,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15-OrnekProje-IliskiliTablo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OkulProje", "15-OrnekProje-IliskiliTablolarveEOkulBenzeriUygulama\OkulProje\OkulProje.csproj", "{14CF0248-3C52-4DA7-B339-8A1E3CAB0393}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "16-EntityFramework", "16-EntityFramework", "{CBB82E74-149F-435A-B6B9-CAA0098D6376}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityProjeUygulama", "16-EntityFramework\EntityProjeUygulama\EntityProjeUygulama.csproj", "{54D0EE29-BBCF-42A5-847C-89ADED18A65A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -333,6 +337,10 @@ Global
 		{14CF0248-3C52-4DA7-B339-8A1E3CAB0393}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14CF0248-3C52-4DA7-B339-8A1E3CAB0393}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14CF0248-3C52-4DA7-B339-8A1E3CAB0393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D0EE29-BBCF-42A5-847C-89ADED18A65A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D0EE29-BBCF-42A5-847C-89ADED18A65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D0EE29-BBCF-42A5-847C-89ADED18A65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D0EE29-BBCF-42A5-847C-89ADED18A65A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -387,5 +395,6 @@ Global
 		{D18D5274-399B-4711-B27B-BB321ABE2FA6} = {AA1FB096-A00C-4F8F-93C5-CDC457A5A480}
 		{CC541409-2C26-4D92-9EED-02E7A85B212C} = {AA1FB096-A00C-4F8F-93C5-CDC457A5A480}
 		{14CF0248-3C52-4DA7-B339-8A1E3CAB0393} = {AE7082CA-6807-48D4-9892-6CC4439B25E5}
+		{54D0EE29-BBCF-42A5-847C-89ADED18A65A} = {CBB82E74-149F-435A-B6B9-CAA0098D6376}
 	EndGlobalSection
 EndGlobal
