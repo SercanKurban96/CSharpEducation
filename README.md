@@ -775,3 +775,84 @@ Form'a eklediğimizde herhangi bir şey gözükmez ancak Form'un Properties kıs
 ![image](https://github.com/user-attachments/assets/0866a27b-0a78-4399-80bd-e74af2d0c31c)
 <br>
 Programı çalıştırdığımız zaman fareye sağ tıkladığımızda buradaki menüler gözükecektir.<br><br>
+
+# 🖥️ Bölüm 8 - Ekstra Yapılar
+Bu bölümde Random kullanımı, CAPTCHA oluşturma, formlar arası veri taşıma, Point, Enum, Matematik Fonksiyonları ve Dinamik Araçlar konuları içermektedir.<br><br>
+
+## 📌 1. Random (Rastgele Sayı Üretme)
+C#’ta rastgele sayı üretmek için Random sınıfı kullanılır.<br><br>
+### ⚙️ Rastgele Sayı Üretme
+Random rastgele = new Random();<br>
+int sayi = rastgele.Next(1, 101); // 1 ile 100 arasında sayı üretir<br>
+Console.WriteLine("Rastgele Sayı: " + sayi);<br><br>
+💯 Not: Next(min, max), min dahil, max hariç değer üretir.<br><br>
+
+## 📌 2. Captcha (Güvenlik Kodu)
+Captcha, botları engellemek için kullanılan bir doğrulama yöntemidir.<br><br>
+### ⚙️ Basit Captcha Üretme
+Random rnd = new Random();<br>
+string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";<br>
+string captcha = "";<br>
+<br>
+for (int i = 0; i < 6; i++)<br>
+{<br>
+    captcha += chars[rnd.Next(chars.Length)];<br>
+}<br>
+<br>
+Console.WriteLine("Captcha: " + captcha);<br>
+<br>
+✅ Çıktı:<br>
+Captcha: X9B2MZ
+<br><br>
+
+## 📌 3. Formlar Arası Veri Taşıma
+Windows Forms’ta bir formdan diğerine veri taşımak için konstrüktör veya public değişkenler kullanılabilir.<br><br>
+### ⚙️ Örnek Kullanım
+2 tane Form açtığımızı düşünelim. İlk formumuza bir tane buton eklediğimiz zaman butona tıkladığımızda ikinci bir forma gitmesini sağlayan kodlar aşağıdaki gibidir.<br><br>
+
+Form2 fr = new Form2();<br>
+fr.Show();<br>
+this.Hide();<br><br>
+
+## 📌 4. Point (Koordinat Kullanımı)
+Point, bir nesnenin X ve Y koordinatlarını tutar.<br><br>
+### ⚙️ Örnek Kullanım
+Point konum = new Point();<br>
+konum.X = 300;<br>
+konum.Y = 200;<br>
+pictureBox1.Location = konum;<br><br>
+
+💯 pictureBox1, (300, 200) konumuna yerleşir.<br><br>
+
+## 📌 5. Enum (Sabit Değerler Tanımlama)
+Enum, sabit değerler içeren bir veri tipidir.<br><br>
+### ⚙️ Enum Tanımlama
+enum Gunler { Pazartesi, Salı, Çarşamba, Perşembe, Cuma, Cumartesi, Pazar }<br>
+<br>
+Gunler bugun = Gunler.Çarşamba;<br>
+Console.WriteLine("Bugün: " + bugun);<br><br>
+✅ Çıktı:<br>
+Bugün: Çarşamba<br><br>
+
+## 📌 6. Matematik Fonksiyonları
+C#’ta Math sınıfı birçok matematiksel işlem sağlar.<br><br>
+### ⚙️ Kullanım Örnekleri
+double sayi = 25.6;<br><br>
+
+Console.WriteLine(Math.Abs(-10));   // Mutlak değer: 10<br>
+Console.WriteLine(Math.Sqrt(16));   // Karekök: 4<br>
+Console.WriteLine(Math.Pow(2, 3));  // Üs alma: 8<br>
+Console.WriteLine(Math.Round(sayi)); // Yuvarlama: 26<br>
+Console.WriteLine(Math.Floor(sayi)); // Aşağı yuvarla: 25<br>
+Console.WriteLine(Math.Ceiling(sayi)); // Yukarı yuvarla: 26<br><br>
+
+## 📌 7. Dinamik Araçlar (Runtime Controls)
+Dinamik araçlar, program çalışırken (runtime) oluşturulan nesnelerdir.<br><br>
+
+### ⚙️ Dinamik Buton Ekleme
+Button btn = new Button();<br>
+btn.Text = "Tıkla";<br>
+btn.Size = new Size(100, 50);<br>
+btn.Location = new Point(50, 50);<br>
+btn.Click += (s, e) => MessageBox.Show("Butona tıklandı!");<br>
+this.Controls.Add(btn);<br><br>
