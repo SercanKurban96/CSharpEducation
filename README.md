@@ -30,3 +30,18 @@ Zengin metin kutusu denetimini temsil eder. Kullanıcı metin girebilir ve düze
 Koleksiyonları gruplandırmak için kullanılır. Çoklu seçimlerden panelin içinde yer alan RadioButton ile panelde bulunmayan RadioButton araçları aynı anda seçebilme özelliğini sağlar.
 ### ⚙️ GroupBox
 Araçları gruplandırmak için kullanılan form aracıdır. Amaç özellikle birbiriyle ilişkili olan bileşenleri bir arada tutabilmektir.
+
+# 🖥️ Bölüm 2 - Değişkenler
+C#'ta değişkenler, verileri saklamak için kullanılan isimlendirilmiş bellek alanlarıdır. Değişkenler belirli bir veri tipine sahiptir ve o veri tipine uygun değerler alabilirler.
+<br>
+
+## C#'ta Temel Veri Türleri ve Değişkenler
+<b>1. Tamsayı Türleri</b><br>
+byte (0 - 255)<br>
+sbyte (-128 ile 127)<br>
+short (-32,768 ile 32,767)<br>
+ushort (0 ile 65,535)<br>
+int (-2,147,483,648 ile 2,147,483,647)<br>
+uint (0 ile 4,294,967,295)<br>
+long (-9 kentilyon ile +9 kentilyon)<br>
+ulong (0 ile çok büyük bir pozitif sayı)<br>
